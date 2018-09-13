@@ -27,6 +27,7 @@
                         <div class="dropdown-menu">
                             <div class="drop-wrap">
                                 <div class="five-col">
+                                    @if(!empty($tregions))
                                     @foreach($tregions as $region)
                                     <div class="column">
                                         <strong class="title sub-link-opener">{{ $region->name }}</strong>
@@ -39,6 +40,7 @@
                                         </ul>
                                     </div>
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -48,6 +50,7 @@
                         <div class="dropdown-menu">
                             <div class="drop-wrap">
                                 <div class="five-col">
+                                    @if(!empty($cregions))
                                     @foreach($cregions as $region)
                                     <div class="column">
                                         <strong class="title sub-link-opener">{{ $region->name }}</strong>
@@ -60,6 +63,7 @@
                                         </ul>
                                     </div>
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -69,6 +73,7 @@
                         <div class="dropdown-menu">
                             <div class="drop-wrap">
                                 <div class="five-col">
+                                    @if(!empty($ski))
                                     @foreach($skis as $region)
                                     <div class="column">
                                         <strong class="title sub-link-opener">{{ $region->name }}</strong>
@@ -81,6 +86,7 @@
                                         </ul>
                                     </div>
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -90,7 +96,8 @@
                         <div class="dropdown-menu">
                             <div class="drop-wrap">
                                 <div class="five-col">
-                                    @foreach($skis as $region)
+                                    @if(!empty($tours))
+                                    @foreach($tours as $region)
                                     <div class="column">
                                         <strong class="title sub-link-opener">{{ $region->name }}</strong>
                                         <ul class="header-link">
@@ -102,6 +109,7 @@
                                         </ul>
                                     </div>
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
