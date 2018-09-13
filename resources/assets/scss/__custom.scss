@@ -1,0 +1,113 @@
+ul.outline-itinerary{
+  list-style: none;
+  padding: 0px;
+  li{
+    padding: 0px;
+    margin-bottom: 8px;
+    span.label.label-info{
+      font-size: 14px;
+      padding-right: 5px;
+    }
+  }
+}
+
+.serarch-button-holder{
+  margin-top:15px;
+  padding-top: 15px;
+}
+.jq-ry-group{
+  position: unset !important;
+}
+.starrr {
+  display: inline-block;
+  a {
+    font-size: 30px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none;
+  }
+}
+.gallery-row{
+  margin-bottom:15px;
+}
+.add-icon i{
+  font-size: 35px;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+.inquiry-form-wrapper{
+  margin-top:40px;
+}
+
+.paragraph-collapsible p:nth-child(odd) {
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 25px 8px 8px;
+    background: #4A6FA1;
+    color: #fff;
+    font-size: 0.88rem
+}
+
+.paragraph-collapsible p:nth-child(odd):after {
+    content: '';
+    position: absolute;
+    z-index: 1030;
+    content: '\f067';
+    font-family: FontAwesome, sans-serif;
+    top: 10px;
+    right: 10px;
+    -webkit-transform: tranlate(0%, -50%);
+    -moz-transform: tranlate(0%, -50%);
+    -ms-transform: tranlate(0%, -50%);
+    -o-transform: tranlate(0%, -50%);
+    transform: tranlate(0%, -50%)
+}
+
+.paragraph-collapsible p.shown:after {
+    content: '\f068'
+}
+
+.paragraph-collapsible p:nth-child(even) {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    margin-top: -1rem
+}
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+span.fa.fa-instagram {
+    font-size: 54px;
+}

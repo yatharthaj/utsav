@@ -1,0 +1,36 @@
+/* content list styles */
+.content-list {
+	@extend %listreset;
+
+	&.tick-list {
+		li {
+			&:before {
+				content: "\e962";
+				color: #4caf50;
+			}
+		}
+	}
+
+	&.cross-list {
+		li {
+			&:before {
+				content: "\e914";
+				color: #E3342F;
+			}
+		}
+	}
+
+	li{
+		padding-left: 35px;
+		position: relative;
+		margin-bottom: 5px;
+
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 7px;
+			font: 16px/16px 'icomoon';
+			color: $silver-chalice;
+		}
+	}
+}
