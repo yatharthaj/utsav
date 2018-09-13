@@ -25,88 +25,88 @@ class TableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
-//        $group = new Group;
-//        $group->name = "Max 2 - Min 10";
-//        $group->save();
-//
-//        $country = new Country;
-//        $country->name = 'Nepal';
-//        $country->save();
-//
-//        $country = new Country;
-//        $country->name = 'Tibet';
-//        $country->save();
-//
-//        $country = new Country;
-//        $country->name = 'Bhutan';
-//        $country->save();
-//
-//        $difficulty = new Difficulty;
-//        $difficulty->name = 'Easy';
-//        $difficulty->save();
-//
-//        $difficulty = new Difficulty;
-//        $difficulty->name = 'Medium';
-//        $difficulty->save();
-//
-//        $difficulty = new Difficulty;
-//        $difficulty->name = 'Hard';
-//        $difficulty->save();
-//
-//        $accommodation = new Accommodation;
-//        $accommodation->name = "3 Star Hotel in Kathmandu and tea house during the trek";
-//        $accommodation->save();
-//
-//        $meal = new Meal;
-//        $meal->name = "All Meals Included";
-//        $meal->save();
-//
-//        $region = new Region;
-//        $region->name = 'Everest Region';
-//        $region->slug = str_slug($region->name, '-');
-//        $region->save();
-//
-//        $region = new Region;
-//        $region->name = 'Annapurna Region';
-//        $region->slug = str_slug($region->name, '-');
-//        $region->save();
-//
-//        $region = new Region;
-//        $region->name = 'Langtang Region';
-//        $region->slug = str_slug($region->name, '-');
-//        $region->save();
-//
-//        $region = new Location;
-//        $region->name = 'Kathmandu, Nepal';
-//        $region->save();
-//
-//        $category = new TourCategory;
-//        $category->name = "Trekking";
-//        $category->slug = str_slug($category->name, '-');
-//        $category->save();
-//
-//        $category = new TourCategory;
-//        $category->name = "Climbing";
-//        $category->slug = str_slug($category->name, '-');
-//        $category->save();
-//
-//        $category = new TourCategory;
-//        $category->name = "Ski";
-//        $category->slug = str_slug($category->name, '-');
-//        $category->save();
-//
-//        $category = new TourCategory;
-//        $category->name = "Day Tour";
-//        $category->slug = str_slug($category->name, '-');
-//        $category->save();
-//
-//        $category = new TourCategory;
-//        $category->name = "Cultural Tour";
-//        $category->slug = str_slug($category->name, '-');
-//        $category->save();
+        // $faker = Faker\Factory::create();
+       $group = new Group;
+       $group->name = "Max 2 - Min 10";
+       $group->save();
 
-        $tour = Tour::all();
+       $country = new Country;
+       $country->name = 'Nepal';
+       $country->save();
+
+       $country = new Country;
+       $country->name = 'Tibet';
+       $country->save();
+
+       $country = new Country;
+       $country->name = 'Bhutan';
+       $country->save();
+
+       $difficulty = new Difficulty;
+       $difficulty->name = 'Easy';
+       $difficulty->save();
+
+       $difficulty = new Difficulty;
+       $difficulty->name = 'Medium';
+       $difficulty->save();
+
+       $difficulty = new Difficulty;
+       $difficulty->name = 'Hard';
+       $difficulty->save();
+
+       $accommodation = new Accommodation;
+       $accommodation->name = "3 Star Hotel in Kathmandu and tea house during the trek";
+       $accommodation->save();
+
+       $meal = new Meal;
+       $meal->name = "All Meals Included";
+       $meal->save();
+
+       $region = new Region;
+       $region->name = 'Everest Region';
+       $region->slug = str_slug($region->name, '-');
+       $region->save();
+
+       $region = new Region;
+       $region->name = 'Annapurna Region';
+       $region->slug = str_slug($region->name, '-');
+       $region->save();
+
+       $region = new Region;
+       $region->name = 'Langtang Region';
+       $region->slug = str_slug($region->name, '-');
+       $region->save();
+
+       $region = new Location;
+       $region->name = 'Kathmandu, Nepal';
+       $region->save();
+
+       $category = new TourCategory;
+       $category->name = "Trekking";
+       $category->slug = str_slug($category->name, '-');
+       $category->save();
+
+       $category = new TourCategory;
+       $category->name = "Climbing";
+       $category->slug = str_slug($category->name, '-');
+       $category->save();
+
+       $category = new TourCategory;
+       $category->name = "Ski";
+       $category->slug = str_slug($category->name, '-');
+       $category->save();
+
+       $category = new TourCategory;
+       $category->name = "Day Tour";
+       $category->slug = str_slug($category->name, '-');
+       $category->save();
+
+       $category = new TourCategory;
+       $category->name = "Cultural Tour";
+       $category->slug = str_slug($category->name, '-');
+       $category->save();
+
+        // $tour = Tour::all();
 //        for ($i = 1; $i <= $tour->count(); $i++) {
 //            $featuredImage = new FeaturedImage;
 //            $featuredImage->tour_id = $i;
@@ -153,30 +153,30 @@ class TableSeeder extends Seeder
 //            $itinerary->plan = $faker->paragraph($nbSentences = 5, $variableNbSentences = true);
 //            $itinerary->save();
 //        }
-        for ($i=1; $i<=8; $i++)
-        {
-            $included = new Included;
-            $included->name = $faker->sentence($nbWords = $faker->numberBetween(4,5), $variableNbWords = true);
-            $included->created_at = $faker->dateTime($max = 'now', $timezone = null);
-            $included->updated_at = $faker->dateTime($max = 'now', $timezone = null);
-            $included->save();
+        // for ($i=1; $i<=8; $i++)
+        // {
+        //     $included = new Included;
+        //     $included->name = $faker->sentence($nbWords = $faker->numberBetween(4,5), $variableNbWords = true);
+        //     $included->created_at = $faker->dateTime($max = 'now', $timezone = null);
+        //     $included->updated_at = $faker->dateTime($max = 'now', $timezone = null);
+        //     $included->save();
 
-            $excluded = new Excluded;
-            $excluded->name = $faker->sentence($nbWords = $faker->numberBetween(4,5), $variableNbWords = true);
-            $excluded->created_at = $faker->dateTime($max = 'now', $timezone = null);
-            $excluded->updated_at = $faker->dateTime($max = 'now', $timezone = null);
-            $excluded->save();
+        //     $excluded = new Excluded;
+        //     $excluded->name = $faker->sentence($nbWords = $faker->numberBetween(4,5), $variableNbWords = true);
+        //     $excluded->created_at = $faker->dateTime($max = 'now', $timezone = null);
+        //     $excluded->updated_at = $faker->dateTime($max = 'now', $timezone = null);
+        //     $excluded->save();
 
-            DB::table('includes_tour')->insert([
-                'tour_id' => 3,
-                'included_id' => $i
-            ]);
+        //     DB::table('includes_tour')->insert([
+        //         'tour_id' => 3,
+        //         'included_id' => $i
+        //     ]);
 
-            DB::table('excludes_tour')->insert([
-                'tour_id' => 3,
-                'excluded_id' => $i
-            ]);
-        }
+        //     DB::table('excludes_tour')->insert([
+        //         'tour_id' => 3,
+        //         'excluded_id' => $i
+        //     ]);
+        // }
 
     }
 }
