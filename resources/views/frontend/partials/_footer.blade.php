@@ -5,28 +5,35 @@
             <nav class="col-sm-4 col-lg-3 footer-nav">
                 <h3>Destinations</h3>
                 <ul class="slide">
+                    @if(!empty($fcountries))
                     @foreach($fcountries as $country)
                     <li><a href="#">{{ $country->name }}</a></li>
                     @endforeach
+                    @endif
                 </ul>
             </nav>      
             <nav class="col-sm-4 col-lg-3 footer-nav">
                 <h3>Activities</h3>
                 <ul class="slide">
+                    @if(!empty($factivities))
                     @foreach($factivities as $activity)
                     <li><a href="#">{{ $activity->name }}</a></li>
                     @endforeach
+                    @endif
                 </ul>
             </nav>                  
             <nav class="col-sm-4 col-lg-3 footer-nav active">
                 <h3>About</h3>
                 <ul class="slide">
+                    @if(!empty($fpages))
                     @foreach($fpages as $page)
                     <li><a href="#">{{ $page->title }}</a></li>
                     @endforeach
+                    @endif
                 </ul>
             </nav>
             <nav class="col-sm-4 col-lg-3 footer-nav last">
+                 @if(!empty($fcontact))
                 <h3>contact {{ $fcontact->site_name}}</h3>
                 <ul class="slide address-block">
                     <li class="wrap-text"><span class="icon-tel"></span> <a href="tel:{{ $fcontact->phone }}">{{ $fcontact->phone }}</a></li>
@@ -34,6 +41,7 @@
                     <li class="wrap-text"><span class="icon-email"></span> <a href="mailto:{{ $fcontact->email }}">{{ $fcontact->email }}</a></li>
                     <li><span class="icon-home"></span> <address>{{ $fcontact->address .','. $fcontact->city }}</address></li>
                 </ul>
+                @endif
             </nav>
         </div>
         <!-- social wrap -->

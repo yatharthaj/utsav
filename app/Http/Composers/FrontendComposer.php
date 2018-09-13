@@ -15,8 +15,8 @@ class FrontendComposer
 {
   public function partners(View $view)
   {
-    // $view->with('partners',
-    //   $partners = Partner::where('status','=', 1)->get());
+    $view->with('partners',
+      $partners = Partner::where('status','=', 1)->get());
   }
 
   public function menus( View $view)
@@ -58,25 +58,25 @@ class FrontendComposer
   }   
   public function countries( View $view)
   {
-    // $countries = Country::all();
-    // $view->with('fcountries',$countries);     
+    $countries = Country::all();
+    $view->with('fcountries',$countries);     
   } 
 
   public function pages( View $view)
   {
-    // $pages = Page::where('status',1)->get();
-    // $view->with('fpages',$pages);     
+    $pages = Page::where('status',1)->get();
+    $view->with('fpages',$pages);     
   }  
 
   public function activity( View $view)
   {
-    // $activity = TourCategory::all();
-    // $view->with('factivities',$activity);     
+    $activity = TourCategory::all();
+    $view->with('factivities',$activity);     
   }    
 
   public function contact(View $view)
   {
-    // $contact = ContactDetail::first();
-    // $view->with('fcontact', $contact);
+    $contact = ContactDetail::first();
+    $view->with('fcontact', $contact);
   }
 }
