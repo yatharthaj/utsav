@@ -42,7 +42,7 @@ class AddColsToToursTable extends Migration
         Schema::table('tours', function (Blueprint $table) {
             $table->dropColumn('group_id');
             $table->dropColumn('meal_id');
-            $table->dropColumn('accomodation_id');
+            $table->dropColumn('accommodation_id');
             $table->dropColumn('difficulty_id');
             $table->dropColumn('category_id');
             $table->dropColumn('region_id');
