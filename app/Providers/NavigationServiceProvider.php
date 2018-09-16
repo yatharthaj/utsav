@@ -33,7 +33,7 @@ class NavigationServiceProvider extends ServiceProvider
     }
 
     private function partnerLogos(){
-        view()->composer('frontend.partials._partners','App\Http\Composers\FrontendComposer@partners');
+        view()->composer('frontend.partials._nav','App\Http\Composers\FrontendComposer@partners');
     }    
 
     private function mainMenu(){
