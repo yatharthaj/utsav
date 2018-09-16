@@ -16,7 +16,7 @@ class FrontendComposer
   public function partners(View $view)
   {
     $view->with('partners',
-      $partners = Partner::where('status','=', 1)->get());
+      $partners = Partner::all());
   }
 
   public function menus( View $view)
