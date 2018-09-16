@@ -6,6 +6,7 @@ use App\Departure;
 use Illuminate\Http\Request;
 use App\Tour;
 use App\MonthTrip;
+use App\Carousel;
 use App\Review;
 use App\Offer;
 use App\Page;
@@ -16,6 +17,7 @@ class GetFrontendController extends Controller
 {
     public function getIndex()
     {
+        $slides = Carousel::where('status', 1)->get();
         $tours = Tour::where('status', 1)->where('featured', 1)->limit(6)->get();
         $month = MonthTrip::first();
         $offer = Offer::first();
@@ -24,7 +26,8 @@ class GetFrontendController extends Controller
         ->withTours($tours)
         ->withOffer($offer)
         ->withMonth($month)
-        ->withCategories($categories);
+        ->withCategories($categories)
+        ->withSlides($slides);
     }
 
     public function tourDetail($slug)

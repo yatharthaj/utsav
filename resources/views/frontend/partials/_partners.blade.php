@@ -6,7 +6,7 @@
 				<div class="seperator"></div>
 			</header>
 			<div class="partner-list" id="partner-slide">
-{{-- 				@if(!empty($partners))
+ 				@if(!empty($partners))
 				@foreach($partners as $partner)
 				<div class="partner">
 					<a href="{{ $partner->url }}">
@@ -15,7 +15,7 @@
 					</a>
 				</div>
 				@endforeach
-				@endif --}}
+				@endif 
 			</div>
 		</div>
 	</article>

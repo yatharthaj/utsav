@@ -17,8 +17,8 @@ class CreateCarouselsTable extends Migration
             $table->increments('id');
             $table->string('path');
             $table->string('name')->nullable();
-            $table->string('header');
-            $table->string('subheader');
+            $table->string('header')->nullable();
+            $table->string('subheader')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
