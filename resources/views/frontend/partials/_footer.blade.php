@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!-- copyright -->
-                    <strong class="copyright"><i class="fa fa-copyright"></i> Copyright 2016 - Entrada - An Adventure Theme - by  <a href="#">Waituk</a></strong>
+                    <strong class="copyright"><i class="fa fa-copyright"></i> Copyright {{ date('Y') }}</strong>
                 </div>
                 <div class="col-lg-6">
                     <ul class="payment-option">
