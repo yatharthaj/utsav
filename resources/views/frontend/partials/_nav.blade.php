@@ -3,8 +3,8 @@
         <!-- logo -->
         <div class="logo">
             <a href="/">
-                <img class="normal" src="{{asset('img/logos/logo.png')}}" alt="Entrada">
-                <img class="gray-logo" src="{{asset('img/logos/logo-gray.svg')}}" alt="Entrada">
+                <img class="normal" src="{{asset('img/logos/logo1.png')}}" alt="Nepal Ski Guides">
+                <img class="gray-logo" src="{{asset('img/logos/logo-gray.svg')}}" alt="Nepal Ski Guides">
             </a>
         </div>
         <!-- main navigation -->

@@ -928,7 +928,7 @@ blockquote.normal {
   .logo {
     width: 180px;
     margin: 0;
-    padding: 25px 15px 25px 0;
+    padding: 5px 5px 5px 0;
     float: left;
     border-right: 1px solid #2d2d2d;
   }
@@ -1072,7 +1072,7 @@ blockquote.normal {
 
   .default-page #header.white-header.fixed-position .logo,
   #header.white-header.fixed-position .logo {
-    border-right-color: #eaeaea;
+    border-right-color: unset;
   }
 
   .default-page #header.white-header.fixed-position .logo .normal,
@@ -1115,7 +1115,7 @@ blockquote.normal {
 
 .default-page #header.default-white-header .logo,
 #header.default-white-header .logo {
-  border-right-color: #eaeaea;
+  border-right-color: unset;
 }
 
 .default-page #header.default-white-header .logo .normal,
@@ -13213,5 +13213,11 @@ textarea.parsley-error {
 
 span.fa.fa-instagram {
   font-size: 54px;
+}
+
+@media only screen and (min-width: 992px) {
+  .logo {
+    padding: 5px 5px 5px 0;
+  }
 }
 
