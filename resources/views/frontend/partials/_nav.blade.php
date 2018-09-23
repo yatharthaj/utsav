@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <!-- logo -->
         <div class="logo">
-            <a href="index.html">
-                <img class="normal" src="{{asset('img/logos/logo.svg')}}" alt="Entrada">
+            <a href="/">
+                <img class="normal" src="{{asset('img/logos/logo.png')}}" alt="Entrada">
                 <img class="gray-logo" src="{{asset('img/logos/logo-gray.svg')}}" alt="Entrada">
             </a>
         </div>
