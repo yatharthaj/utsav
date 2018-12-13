@@ -87,18 +87,19 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request->all());
         try {
             $this->validate($request, [
                 'title' => 'required|max:255',
                 'days' => 'required|numeric|max:90',
                 'price' => 'required|numeric',
-                'price1' => 'sometimes|numeric',
-                'price2' => 'sometimes|numeric',
+                'price1' => 'sometimes',
+                'price2' => 'sometimes',
                 'altitude' => 'required|numeric',
                 'difficulty' => 'required',
                 'group' => 'required',
                 'country' => 'required',
-                'region' => 'sometimes|numeric',
+                'region' => 'sometimes',
                 'accommodation' => 'required',
                 'meal' => 'required',
                 'start' => 'required',
@@ -175,8 +176,8 @@ class TourController extends Controller
                 }
 
                 $tour->featuredImage()->save(new FeaturedImage([
-                    'thumbnail' => Tour::uploadImage($this->thumbnail, $request->file('featured_image'), 370, 270),
-                    'path' => Tour::uploadImage($this->featured, $request->file('featured_image'), 960, 627)
+                    'thumbnail' => Tour::uploadImage($this->thumbnail, $request->file('featured_image'), 960, 720),
+                    'path' => Tour::uploadImage($this->featured, $request->file('featured_image'), 960, 720)
                 ]));
             }
 
@@ -246,7 +247,7 @@ class TourController extends Controller
                 'difficulty' => 'required',
                 'group' => 'required',
                 'country' => 'required',
-                'region' => 'sometimes|numeric',
+                'region' => 'sometimes',
                 'accommodation' => 'required',
                 'meal' => 'required',
                 'start' => 'required',
@@ -289,9 +290,16 @@ class TourController extends Controller
                 if (!File::exists($this->featured)) {
                     File::makeDirectory($this->featured);
                 }
-                $oldFeatured = $tour->featured_image;
-                $tour->featured_image = Tour::uploadImage($this->featured, $request->file('featured_image'), 370, 270);
-                File::delete(public_path($oldFeatured));
+                $oldPath = $tour->featuredImage->path;
+                $oldThumb = $tour->featuredImage->thumbnail;
+
+                $featuredImage = $tour->featuredImage;
+                $featuredImage->path = Tour::uploadImage($this->featured, $request->file('featured_image'), 960, 720);
+                $featuredImage->thumbnail = Tour::uploadImage($this->featured, $request->file('featured_image'),960, 640);
+                $tour->featuredImage()->save($featuredImage);
+
+                File::delete(public_path($oldPath));
+                File::delete(public_path($oldThumb));
             }
 
             if ($request->hasFile('map')) {

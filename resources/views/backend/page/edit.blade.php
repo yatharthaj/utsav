@@ -36,9 +36,15 @@
                                 <select id="category_id {{$errors->has('category_id')? 'inputError' : ''}}"
                                         name="category_id" class="form-control">
                                     <option value="">&nbsp;</option>
+                                    @if(empty($page->category->id))
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                        @else
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" {{($category->id == $page->category->id)?"selected":"" }}>{{ $category->name }}</option>
                                     @endforeach
+                                        @endif
                                 </select>
                                 @if ($errors->has('category_id'))
                                     <span class="help-block">{{$errors->first('category_id')}}</span>

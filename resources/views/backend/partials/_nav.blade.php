@@ -188,6 +188,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('team.index') }}">
+                        <div class="gui-icon"><i class="fa fa-users"></i></div>
+                        <span class="title">Team</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('setting.index') }}">
                         <div class="gui-icon"><i class="fa fa-cogs"></i></div>
                         <span class="title">Settings</span>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Departure;
+use App\Insta;
+use App\Partner;
 use Illuminate\Http\Request;
 use App\Tour;
 use App\MonthTrip;
@@ -12,6 +14,9 @@ use App\Offer;
 use App\Page;
 use App\TourCategory;
 use App\ContactDetail;
+use App\Team;
+use App\Itinerary;
+use Vinkla\Instagram\Instagram;
 
 class GetFrontendController extends Controller
 {
@@ -22,40 +27,47 @@ class GetFrontendController extends Controller
         $month = MonthTrip::first();
         $offer = Offer::first();
         $categories = TourCategory::all();
+        $instaPosts = Insta::take(6)->get();
+        $partners = Partner::all();
         return view('frontend.index')
-        ->withTours($tours)
-        ->withOffer($offer)
-        ->withMonth($month)
-        ->withCategories($categories)
-        ->withSlides($slides);
+            ->withFeatured($tours)
+            ->withOffer($offer)
+            ->withMonth($month)
+            ->withCategories($categories)
+            ->withSlides($slides)
+            ->withFeeds($instaPosts)
+        ->withPartners($partners);
     }
 
     public function tourDetail($slug)
     {
         $tour = Tour::where('slug', $slug)->first();
+        $itineraries = Itinerary::where('tour_id','=', $tour->id)
+            ->orderBy('id', 'asc')->get();
         $departures = $tour->departure()->FixedDates($tour->id, date('m'), date('Y'))->get();
 
-        $similars = Tour::whereHas('category', function ($r) use ($tour) {
-            $r->where('tour_categories.name', '=', $tour->category->name);
-        })
-            ->orderByRaw('RAND()')
-            ->take(4)
-            ->get();
-
+//        $similars = Tour::whereHas('category', function ($r) use ($tour) {
+//            $r->where('tour_categories.name', '=', $tour->category->name);
+//        })
+//            ->orderByRaw('RAND()')
+//            ->take(4)
+//            ->get();
+//        dd($tour);
         return view('frontend.tour.detail')
-        ->withTour($tour)
-        ->withDepartures($departures)
-        ->withSimilars($similars);
+            ->withTour($tour)
+            ->withItineraries($itineraries)
+            ->withDepartures($departures);
     }
 
-    public function ajaxsearchdeparture(Request $request){
+    public function ajaxsearchdeparture(Request $request)
+    {
         $tour = Tour::find($request->tour_id);
-        $departures = Departure::where('tour_id','=',$request->tour_id)
-        ->whereMonth('start','=',$request->month)
-        ->whereYear('start','=',$request->year)
-        ->get();
+        $departures = Departure::where('tour_id', '=', $request->tour_id)
+            ->whereMonth('start', '=', $request->month)
+            ->whereYear('start', '=', $request->year)
+            ->get();
 
-        return view('frontend.tour.dates',compact('departures','tour'));
+        return view('frontend.tour.dates', compact('departures', 'tour'));
     }
 
     public function getContact()
@@ -64,11 +76,11 @@ class GetFrontendController extends Controller
         return view('frontend.contact')->withContact($contact);
     }
 
-    public function getPage($pcatslug,$pslug)
+    public function getPage($pcatslug, $pslug)
     {
         $datas = Page::whereHas('category', function ($r) use ($pcatslug) {
             $r->where('page_categories.slug', '=', $pcatslug);
-        })->where('slug','=', $pslug)->first();
+        })->where('slug', '=', $pslug)->first();
         return view('frontend.page')->withDatas($datas);
     }
 
@@ -79,33 +91,57 @@ class GetFrontendController extends Controller
     // }  
     public function bookStep1($slug)
     {
-        $tour=Tour::where('slug','=', $slug)->first();
+        $tour = Tour::where('slug', '=', $slug)->first();
         return view('frontend.book.book-step1')->withTour($tour);
-    }      
+    }
 
     public function bookStep2(Request $request)
     {
-        $tour=Tour::where('id',$request->tour_id)->first();
+        $tour = Tour::where('id', $request->tour_id)->first();
         return view('frontend.book.book-step2')
-        ->withRequest($request)
-        ->withTour($tour);
-    }        
+            ->withRequest($request)
+            ->withTour($tour);
+    }
 
-    public function joinStep1(Request $request,$slug)
+    public function joinStep1(Request $request, $slug)
     {
         // dd($request->all());
-        $tour=Tour::where('slug','=', $slug)->first();
+        $tour = Tour::where('slug', '=', $slug)->first();
         return view('frontend.book.join-step1')
-        ->withTour($tour)
-        ->withRequest($request);
-    }   
+            ->withTour($tour)
+            ->withRequest($request);
+    }
 
     public function joinStep2(Request $request)
     {
-        // dd($request->all());
-        $tour=Tour::where('id',$request->tour_id)->first();
+        $tour = Tour::where('id', $request->tour_id)->first();
         return view('frontend.book.join-step2')
-        ->withRequest($request)
-        ->withTour($tour);
-    } 
+            ->withRequest($request)
+            ->withTour($tour);
+    }
+
+    public function team()
+    {
+        $members = Team::orderBy('id','asc')->get();
+        return view('frontend.team')
+            ->withMembers($members);
+    }
+
+    public function templateAbout()
+    {
+        return view('frontend.page');
+    }
+
+    public function instagram()
+    {
+//        $instafeeds = new Instagram('5365129520.1677ed0.9a5ea6d9ae654821a210484962ecc42c');
+//        $feeds = $instafeeds->media();
+//        foreach ($feeds as $feed) {
+//            $instagram = new Insta;
+//            $instagram->link = $feed->images->standard_resolution->url;
+//            $instagram->caption = $feed->caption->text;
+//            $instagram->save();
+//        }
+//        return 'Done';
+    }
 }

@@ -20,7 +20,7 @@
                                 <button type="submit" class="btn ink-reaction btn-floating-action btn-sm btn-info " id="edit-modal" style="margin-right: 10px;"
                                         data-id="{{$meal->id}}" data-name="{{$meal->name}}" data-toggle="modal"
                                         data-target="#formModal">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <i class="fas fa-pencil-alt"></i>
                                 </button>
                                 <button type="button" class="btn ink-reaction btn-floating-action btn-sm  btn-danger" data-id="{{$meal->id}}" data-toggle="modal"
                                         data-target="#deleteModal" id="delete-modal">

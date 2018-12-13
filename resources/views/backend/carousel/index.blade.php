@@ -43,7 +43,7 @@
                             @if(!$carousel->status)
                             <a  href="{{route('carousel.publish', $carousel->id)}}" class="btn btn-success" ><i class="fa fa-print"></i> Publish</a>
                             @else
-                            <a  href="{{route('carousel.unpublish',$carousel->id)}}" class="btn btn-success" ><i class="fa fa-print"></i> UnPublish</a>
+                            <a  href="{{route('carousel.unpublish',$carousel->id)}}" class="btn btn-warning" ><i class="fa fa-print"></i> UnPublish</a>
                             @endif
                             <button type="button" class="btn btn-danger" id="delete-modal" data-id="{{$carousel->id}}"   data-toggle="modal"
                                     data-target="#myModal"><i

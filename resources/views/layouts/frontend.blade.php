@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html>
+{{--<!doctype html>--}}
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" itemscope itemtype="http://schema.org/Product">
 @include('frontend.partials._head')
-<body class="default-page">
-<!-- main wrapper -->
-<div id="wrapper">
-    <div class="page-wrapper">
-        <!-- main header -->
-    @include('frontend.partials._nav')
-    <!-- main banner -->
-        @yield('content')
-    </div>
-    <!-- main footer -->
-    @include('frontend.partials._footer')
-</div>
-<!-- scroll to top -->
-<div class="scroll-holder text-center">
-    <a href="javascript:" id="scroll-to-top"><i class="icon-arrow-down"></i></a>
-</div>
+<body>
+<a id="button"></a>
+@include('frontend.partials._nav')
+@yield('content')
+@include('frontend.partials._footer')
 </body>
-<!-- jquery library -->
-@include('frontend.partials._javascripts')
+<!-- Compiled and minified JavaScript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="{{asset('js/app.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/mega-menu.js')}}"></script>
 @yield('scripts')
+@include('frontend.partials._message')
 </html>

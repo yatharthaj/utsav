@@ -24,6 +24,7 @@
                         </thead>
                         <tbody>
                         @foreach($sections as $section)
+                            <tr>
                             <th>{{$section->name}}</th>
                             <th>{{$section->display_name}}</th>
                             <th>{!!  str_limit(strip_tags($section->details), 50, '...') !!}</th>
@@ -56,6 +57,7 @@
                                 </button>
                                 {!! Form::close() !!}
                             </th>
+                            </tr>
                         @endforeach
                         </tbody>
                     </table>

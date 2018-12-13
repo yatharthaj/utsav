@@ -62,7 +62,7 @@ class ReviewController extends Controller
             $review->country= $request->country;
             $review->title = $request->title;
             $review->content = $request->message;
-            $review->rating = $request->rating;
+            $review->rating = rand(4,5);
             $review->tour_id = $request->tour_id;
             if($request->hasFile('image')){
                 if (!File::exists($this->client)) {
@@ -80,7 +80,7 @@ class ReviewController extends Controller
             }
             $review->save();
             Session::flash('success', 'Thank you for your kind words.');
-            return back()->withInput(['tab'=>'tab04']);
+            return back()->withInput(['tabs'=>'reviews']);
         }
     }
 

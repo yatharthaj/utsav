@@ -77,6 +77,9 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator|user'
     Route::resource('section-control','SectionControlController');
     Route::get('section-control/{id}/publish','PagesController@publish')->name('section-control.publish');
     Route::get('section-control/{id}/unpublish','PagesController@unpublish')->name('section-control.unpublish');
+    Route::resource('team','TeamController');
+//    Route::get('team/{id}/publish','TeamController@publish')->name('team.publish');
+//    Route::get('team/{id}/unpublish','TeamController@unpublish')->name('team.unpublish');
 
     //Departure
     Route::resource('departure','DepartureController');
@@ -100,5 +103,8 @@ Route::name('frontend-')->group(function () {
     
     Route::get('/join-group/{slug}/step-1','GetFrontendController@joinStep1')->name('joinStep1');
     Route::post('/join-group/{slug}/step-2','GetFrontendController@joinStep2')->name('joinStep2');   
-    Route::post('/join-group/{slug}/step-3','PostFrontendController@postJoin')->name('joinStep3'); 
+    Route::post('/join-group/{slug}/step-3','PostFrontendController@postJoin')->name('joinStep3');
+    Route::get('/our-team', 'GetFrontendController@team');
+    Route::get('/about', 'GetFrontendController@templateAbout');
+    Route::get('/insta', 'GetFrontendController@Instagram');
 });

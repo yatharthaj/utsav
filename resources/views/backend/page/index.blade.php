@@ -36,7 +36,8 @@
                         <tbody>
                         @foreach($pages as $page)
                             <th>{{$page->title}}</th>
-                            <th>{{$page->category->name}}</th>
+                            <th></th>
+                            {{--<th>{{$page->category->name}}</th>--}}
                             <th>
                                 @if(!$page->main)
                                     <span class="label label-primary f-s-12">{{ $page->parent->title }}</span> <i class="fa fa-arrow-circle-right"></i>

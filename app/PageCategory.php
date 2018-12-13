@@ -16,9 +16,9 @@ class PageCategory extends Model
         ];
     }
 
-    public function page() 
+    public function page()
     {
-        return $this->hasMany('App\Page','id');
+        return $this->hasMany('App\Page','category_id');
     }
 
 }

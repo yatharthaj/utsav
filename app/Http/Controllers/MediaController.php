@@ -50,16 +50,21 @@ class MediaController extends Controller
 
         $media = new Media();
 
-        if (!is_dir($this->path) ) {
+        if (!is_dir($this->path)  || !is_dir($this->path1) || !is_dir($this->thumb)) {
             mkdir($this->path, 0755, true);
-        }
-        if (!is_dir($this->thumb) ) {
+            mkdir($this->path1, 0755, true);
             mkdir($this->thumb, 0755, true);
         }
+//        if (!is_dir($this->path1) ) {
+//
+//        }
+//        if (!is_dir($this->thumb) ) {
+//
+//        }
 
-        $media->path = Media::uploadImage($this->path, $request->file('photo'), 966, 1104);
-        $media->path1 = Media::uploadImage($this->path1, $request->file('photo'), 750, 450);
-        $media->thumb = Media::uploadImage($this->thumb, $request->file('photo'), 370, 270);
+        $media->path = Media::uploadImage($this->path, $request->file('photo'), 1200, 800);
+        $media->path1 = Media::uploadImage($this->path1, $request->file('photo'), 400, 300);
+        $media->thumb = Media::uploadImage($this->thumb, $request->file('photo'), 400, 300);
 
         $media->save();
         return 'Success';

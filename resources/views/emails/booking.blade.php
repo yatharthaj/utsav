@@ -16,7 +16,7 @@ Senders info: {!! $data['user_info'] !!}
 | Mobile        | {{ $data["mobile"] }}                                                  | 
 | Country       | {{ $data["country"] }}                                                 |       
 | Address       | {{ $data["address"] }}                                                 | 
-| Passport      | {{ $data["pNo"] }}                                                     |  
+| Passport      | {{ $data["passport"] }}                                                     |
 | Expiry        | {{ $data["expiry"] }}                                                  |  
 @endcomponent
 <br>

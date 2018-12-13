@@ -22,7 +22,6 @@ class CreateDeparturesTable extends Migration
             $table->integer('price');
             $table->integer('price1')->nullable();
             $table->integer('price3')->nullable();
-            $table->timestamps();
         });
     }
 

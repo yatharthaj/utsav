@@ -16,7 +16,7 @@ class Media extends Model
 
     public static function  uploadImage($path, $image,$width,$height)
     {
-        $filename = time() .'.'. $image->getClientOriginalExtension();
+        $filename =$image->getClientOriginalName() .'-'.time() .'.'. $image->getClientOriginalExtension();
         $location = $path . $filename;
         Image::make($image)->resize($width, $height)->save($location);
         ImageOptimizer::optimize($location);

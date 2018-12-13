@@ -94,6 +94,8 @@ class CarouselController extends Controller
         ]);
         $carousel = Carousel::find($request->id);
         $carousel->name = $request->name;
+        $carousel->header = $request->title;
+        $carousel->subheader = $request->subtitle;
 
         $carousel->save();
 
@@ -114,15 +116,17 @@ class CarouselController extends Controller
         return response()->json($carousel);
     }
 
-    public function publish(Carousel $carousel)
+    public function publish($id)
     {
+        $carousel = Carousel::find($id);
         $carousel->status =1;
         $carousel->save();
         return redirect()->route('carousel.index');
     }
 
-    public function unpublish(Carousel $carousel)
+    public function unpublish($id)
     {
+        $carousel = Carousel::find($id);
         $carousel->status = 0;
         $carousel->save();
         return redirect()->route('carousel.index');

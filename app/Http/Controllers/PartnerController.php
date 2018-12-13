@@ -18,6 +18,7 @@ class PartnerController extends Controller
     public function index()
     {
         $partners = Partner::all();
+//        dd($partners);
         return view('backend.partner.index')->withPartners($partners);
     }
 
@@ -40,18 +41,10 @@ class PartnerController extends Controller
     public function store(Request $request)
     {
         $partner = new Partner();
-
-        if (!is_dir($this->path) ) {
-            mkdir($this->path, 666, true);
-        }
-        // if (!file_exists($this->path)) {
-        //     mkdir($this->path, 666, true);
-        // }        
-
-        $partner->path = Media::uploadImage($this->path, $request->file('photo'), 165, 155);
-
+        $partner->path = Media::uploadImage($this->path, $request->file('photo'), 100, 100);
         $partner->save();
-        return 'Success';
+        return "Success";
+
     }
 
     /**

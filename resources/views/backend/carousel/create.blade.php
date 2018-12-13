@@ -18,7 +18,7 @@
                         {{ csrf_field() }}
                         <div class="dz-message">
                             <h3>Drop files here or click to upload.</h3>
-                            <h4>Resolution: 1920x1135</h4>
+                            <h4>Resolution: 1200x630</h4>
                         </div>
                     </form>
                 </div><!--end .card-body -->

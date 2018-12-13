@@ -26,5 +26,4 @@
 <script src="{{asset('js/core/source/AppVendor.js')}}"></script>
 <script src="{{asset('js/core/demo/Demo.js')}}"></script>
 <script src="{{asset('js/libs/toastr/toastr.js')}}"></script>
-
 <!-- END JAVASCRIPT -->

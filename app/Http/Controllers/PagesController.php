@@ -78,7 +78,7 @@ class PagesController extends Controller
                 $image = $request->file('banner');
                 $filename = time() . '.' . $image->getClientOriginalExtension();
                 $banner = $this->banner . $filename;
-                Image::make($image)->save($banner);
+                Image::make($image)->fit(1920,675)->save($banner);
                 ImageOptimizer::optimize($banner);
                 $page->banner = $banner;
             }
@@ -155,7 +155,7 @@ class PagesController extends Controller
                 $image = $request->file('banner');
                 $filename = time() . '.' . $image->getClientOriginalExtension();
                 $banner = $this->featured . $filename;
-                Image::make($image)->save($banner);
+                Image::make($image)->fit(1920,675)->save($banner);
                 ImageOptimizer::optimize($banner);
                 $page->banner = $banner;
             }
@@ -178,7 +178,9 @@ class PagesController extends Controller
      */
     public function destroy(Page $page)
     {
-        //
+        File::delete(public_path($page->banner));
+        $page->delete();
+        return redirect()->route('pages.index');
     }
 
     public function publish($id)

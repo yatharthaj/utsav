@@ -414,7 +414,7 @@
         });
         $("#region").hide();
         $(".category").change(function () {
-            if ($(this).val() == 1 || $(this).val() == 2) {
+            if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3) {
                 $("#region").show();
             }
             else {

@@ -1,34 +1,55 @@
-@inject('countries','App\Http\Utilities\Country')
 @extends('layouts.frontend')
 @section('content')
-<main id="main">
-	<!-- top information area -->
-	<div class="inner-top">
-		<div class="container">
-			<h1 class="inner-main-heading">Book | {{ $tour->title.'-'.$tour->days }} Days</h1>
-			<!-- breadcrumb -->
-			<nav class="breadcrumbs">
-				<ul>
-					<li><p>Step 3 of 3</p></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-	<div class="inner-main common-spacing container">
-		<div class="demo-wrapper col-sm-10 col-sm-offset-1">
-			<p> Thank you for submitting the booking form. Your necessary information has been forwarded to
-				operations team and you will receive confirmation of recipient with trekking preparation guide
-				and
-				other necessary information like visa advice, medical requirements, equipments, payment detail,
-				insurance and others. You will then be requested to provide us your flight and insurance detail
-				soon.
-				Required minimum deposit amount must be paid in advance to confirm your reservation.
-				Confirmation
-			will be shared when the deposited amount is entered in our bank account.</p>
-		</div>
-	</div>
-	@php
-	header( "refresh:10;url=/" );
-	@endphp
-</main>
+    <!-- steps start -->
+    <section class="grey lighten-4">
+        <div class="title-wrapper">
+            <h4 class="step-title center uk-margin">Book a Trip</h4>
+        </div>
+        <div class="row uk-margin-medium uk-margin-remove-horizontal">
+            <div class="col s4 m4 l4">
+                <div class="circle-text active-step">
+                    <i class="medium material-icons ">check</i>
+                </div>
+                <h2 class="center" style="font-size:14px;">Choose Your Trip</h2>
+            </div>
+            <div class="col s4 m4 l4">
+                <div class="circle-text active-step">
+                    <i class="medium material-icons ">check</i>
+                </div>
+                <h2 class="center" style="font-size:14px;">Traveller's Details</h2>
+            </div>
+            <div class="col s4 m4 l4">
+                <div class="circle-text active-step">
+                    Step 3
+                </div>
+                <h2 class="center" style="font-size:14px;">Booking Complete</h2>
+            </div>
+        </div>
+
+    </section>
+    <!-- steps end -->
+    <!-- thank u message start -->
+    <div class="container">
+        <div class="row">
+            <h3>Thank You !!</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ipsum obcaecati dolorem laudantium vero
+                asperiores modi incidunt consectetur temporibus libero, aspernatur iusto consequatur? Tempore accusamus
+                commodi rem libero officiis odio a, placeat soluta, ab reiciendis harum aliquam perspiciatis doloremque,
+                optio molestiae impedit saepe! Cumque nemo veniam beatae nulla in fugiat velit autem magnam nesciunt
+                explicabo quasi maiores inventore blanditiis, nam iste minus, alias excepturi iusto voluptatibus nobis
+                molestias ex, eos consequuntur. Perspiciatis reprehenderit consequatur animi, nam assumenda debitis iure
+                laboriosam dignissimos iste nihil pariatur quasi delectus nulla hic quae numquam facilis non, facere eum
+                quo. Corrupti repellat aperiam eum omnis dicta nihil unde quam repudiandae quidem, illum, commodi porro
+                tempore debitis dolore vel aliquid a cum veniam nobis ratione expedita officiis repellendus!
+                Placeat!</p>
+        </div>
+    </div>
+
+    <!-- thank u message end -->
+    @php
+        header( "refresh:10;url=/" );
+    @endphp
+
 @stop
+
+

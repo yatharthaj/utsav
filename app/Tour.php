@@ -107,7 +107,7 @@ class Tour extends Model
     {
         $filename = time() .'.'. $image->getClientOriginalExtension();
         $location = $path . $filename;
-        Image::make($image)->resize($width, $height)->save($location);
+        Image::make($image)->fit($width, $height)->save($location);
         ImageOptimizer::optimize($location);
         return $location;
     }

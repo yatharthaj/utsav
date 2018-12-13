@@ -16,7 +16,7 @@ class CreateItinerariesTable extends Migration
         Schema::create('itineraries', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tour_id')->unsigned()->index();
-            $table->integer('day');
+            $table->string('day');
             $table->text('title');
             $table->text('plan');
             $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');

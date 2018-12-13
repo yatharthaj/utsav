@@ -67,7 +67,7 @@ class ContactDetailController extends Controller
         {
             return $e->getMessage();
         }
-        return redirect()->route('setting.create');
+        return redirect()->route('setting.edit');
     }
 
     /**

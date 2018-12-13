@@ -41,6 +41,7 @@ class NavigationServiceProvider extends ServiceProvider
         view()->composer('frontend.partials._nav','App\Http\Composers\FrontendComposer@trekRegions');
         view()->composer('frontend.partials._nav','App\Http\Composers\FrontendComposer@climbRegions');
         view()->composer('frontend.partials._nav','App\Http\Composers\FrontendComposer@skis');
+        view()->composer('frontend.partials._nav','App\Http\Composers\FrontendComposer@heliSki');
         view()->composer('frontend.partials._nav','App\Http\Composers\FrontendComposer@tours');
     }     
     private function footerMenu(){
