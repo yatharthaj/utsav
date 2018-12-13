@@ -74,9 +74,7 @@
         <div class="container white-text">
             <div class="row">
                 <div class="col s12">
-                    @if(!empty($offer))
-                    <h5>{{$offer->message}}</h5>
-                    @endif
+                    {{-- <h5>{{$offer->message}}</h5> --}}
                 </div>
             </div>
         </div>
