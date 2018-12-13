@@ -1,5 +1,5 @@
 {{--<!doctype html>--}}
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" itemscope itemtype="http://schema.org/Product">
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" itemscope itemtype="http://schema.org/Product">
 @include('frontend.partials._head')
 <body>
 <a id="button"></a>
@@ -18,3 +18,5 @@
 @yield('scripts')
 @include('frontend.partials._message')
 </html>
+ --}}
+ 1
