@@ -63,20 +63,20 @@ class TourController extends Controller
     public function create()
     {
         return view('backend.tour.create')
-            ->withCategories($this->categories)
-            ->withRegions($this->regions)
-            ->withGroups($this->groups)
-            ->withmedias($this->medias)
-            ->withIncludes($this->includes)
-            ->withExcludes($this->excludes)
-            ->withCountries($this->countries)
-            ->withLocations($this->locations)
-            ->withMeals($this->meals)
-            ->withAccommodations($this->accomodations)
-            ->withDifficulties($this->difficulties)
-            ->withIncludes($this->includes)
-            ->withExcludes($this->excludes)
-            ->withMedias($this->medias);
+        ->withCategories($this->categories)
+        ->withRegions($this->regions)
+        ->withGroups($this->groups)
+        ->withmedias($this->medias)
+        ->withIncludes($this->includes)
+        ->withExcludes($this->excludes)
+        ->withCountries($this->countries)
+        ->withLocations($this->locations)
+        ->withMeals($this->meals)
+        ->withAccommodations($this->accomodations)
+        ->withDifficulties($this->difficulties)
+        ->withIncludes($this->includes)
+        ->withExcludes($this->excludes)
+        ->withMedias($this->medias);
     }
 
     /**
@@ -141,14 +141,14 @@ class TourController extends Controller
 
             if ($request->hasFile('map')) {
                 if (!File::exists($this->map)) {
-                    File::makeDirectory($this->map);
+                    File::makeDirectory($this->map,0777,true);
                 }
                 $tour->map = Tour::uploadImage($this->map, $request->file('map'), 370, 270);
             }
 
             if ($request->hasFile('elevation')) {
                 if (!File::exists($this->elevation)) {
-                    File::makeDirectory($this->elevation);
+                    File::makeDirectory($this->elevation,0777,true);
                 }
                 $tour->elevation = Tour::uploadImage($this->elevation, $request->file('elevation'), 370, 270);
             }
@@ -172,7 +172,6 @@ class TourController extends Controller
 
             if ($request->hasFile('featured_image')) {
                 if (!File::exists($this->featured)) {
-                    // File::makeDirectory(public_path().'/'.$path,0777,true);
                     File::makeDirectory($this->featured,0777,true);
                 }
 
@@ -210,21 +209,21 @@ class TourController extends Controller
     public function edit(Tour $tour)
     {
         return view('backend.tour.edit')
-            ->withCategories($this->categories)
-            ->withRegions($this->regions)
-            ->withGroups($this->groups)
-            ->withmedias($this->medias)
-            ->withIncludes($this->includes)
-            ->withExcludes($this->excludes)
-            ->withCountries($this->countries)
-            ->withLocations($this->locations)
-            ->withMeals($this->meals)
-            ->withAccommodations($this->accomodations)
-            ->withDifficulties($this->difficulties)
-            ->withIncludes($this->includes)
-            ->withExcludes($this->excludes)
-            ->withMedias($this->medias)
-            ->withTour($tour);
+        ->withCategories($this->categories)
+        ->withRegions($this->regions)
+        ->withGroups($this->groups)
+        ->withmedias($this->medias)
+        ->withIncludes($this->includes)
+        ->withExcludes($this->excludes)
+        ->withCountries($this->countries)
+        ->withLocations($this->locations)
+        ->withMeals($this->meals)
+        ->withAccommodations($this->accomodations)
+        ->withDifficulties($this->difficulties)
+        ->withIncludes($this->includes)
+        ->withExcludes($this->excludes)
+        ->withMedias($this->medias)
+        ->withTour($tour);
 
     }
 
@@ -289,7 +288,7 @@ class TourController extends Controller
 
             if ($request->hasFile('featured_image')) {
                 if (!File::exists($this->featured)) {
-                    File::makeDirectory($this->featured);
+                    File::makeDirectory($this->featured, 0777, true);
                 }
                 $oldPath = $tour->featuredImage->path;
                 $oldThumb = $tour->featuredImage->thumbnail;
@@ -305,7 +304,7 @@ class TourController extends Controller
 
             if ($request->hasFile('map')) {
                 if (!File::exists($this->map)) {
-                    File::makeDirectory($this->map);
+                    File::makeDirectory($this->map,0777,true);
                 }
                 $oldMap = $tour->map;
                 $tour->map = Tour::uploadImage($this->map, $request->file('map'), 370, 270);
@@ -314,7 +313,7 @@ class TourController extends Controller
 
             if ($request->hasFile('elevation')) {
                 if (!File::exists($this->elevation)) {
-                    File::makeDirectory($this->elevation);
+                    File::makeDirectory($this->elevation,0777,true);
                 }
                 $oldElevation = $tour->elevation;
                 $tour->elevation = Tour::uploadImage($this->elevation, $request->file('elevation'), 370, 270);
@@ -365,59 +364,59 @@ class TourController extends Controller
         if ($test = $tour->excludes()->count() != null) {
             $tour->excludes()->detach();
         }
-
+        $tour->departure()->delete();
         $tour->delete();
 
         Session::flash('success', 'Tour deleted sucessfully !');
         return redirect()
-            ->route('tour.index');
+        ->route('tour.index');
     }
 
     public function publish($id)
     {
         DB::table('tours')
-            ->where('id', $id)
-            ->update(['status' => 1]);
+        ->where('id', $id)
+        ->update(['status' => 1]);
         Session::flash('success', 'Tour set as published!');
         return redirect()
-            ->route('tour.index');
+        ->route('tour.index');
     }
 
     public function unpublish($id)
     {
         DB::table('tours')
-            ->where('id', $id)
-            ->update(['status' => 0]);
+        ->where('id', $id)
+        ->update(['status' => 0]);
         Session::flash('success', 'Tour set as published!');
         return redirect()
-            ->route('tour.index');
+        ->route('tour.index');
     }
 
     public function setAsfeatured($id){
         DB::table('tours')
-            ->where('id', $id)
-            ->update(['featured' => 1]);
+        ->where('id', $id)
+        ->update(['featured' => 1]);
 
         Session::flash('success', 'Tour set as unpublished!');
         return redirect()
-            ->route('tour.index');
+        ->route('tour.index');
     }
 
     public function removeAsfeatured($id)
     {
         DB::table('tours')
-            ->where('id', $id)
-            ->update(['featured' => 0]);
+        ->where('id', $id)
+        ->update(['featured' => 0]);
 
         Session::flash('success', 'Tour removed from featured list sucessfully !');
         return redirect()
-            ->route('tour.index');
+        ->route('tour.index');
 
     }
 
     public  function  featuredTours()
     {
         $tours= Tour::where('featured',1)->get();
-         return view('backend.tour.featured')->withTours($tours);
+        return view('backend.tour.featured')->withTours($tours);
     }
 }

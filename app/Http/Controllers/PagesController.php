@@ -73,7 +73,7 @@ class PagesController extends Controller
             }
             if ($request->hasFile('banner')) {
                 if (!File::exists($this->banner)) {
-                    File::makeDirectory($this->banner);
+                    File::makeDirectory($this->banner,0777,true);
                 }
                 $image = $request->file('banner');
                 $filename = time() . '.' . $image->getClientOriginalExtension();
@@ -150,7 +150,7 @@ class PagesController extends Controller
             }
             if ($request->hasFile('banner')) {
                 if (!is_dir($this->featured)) {
-                    mkdir($this->featured, 0755, true);
+                    mkdir($this->featured, 0777, true);
                 }
                 $image = $request->file('banner');
                 $filename = time() . '.' . $image->getClientOriginalExtension();
