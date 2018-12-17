@@ -172,7 +172,8 @@ class TourController extends Controller
 
             if ($request->hasFile('featured_image')) {
                 if (!File::exists($this->featured)) {
-                    File::makeDirectory($this->featured);
+                    // File::makeDirectory(public_path().'/'.$path,0777,true);
+                    File::makeDirectory($this->featured,0777,true);
                 }
 
                 $tour->featuredImage()->save(new FeaturedImage([

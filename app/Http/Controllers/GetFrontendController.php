@@ -25,13 +25,13 @@ class GetFrontendController extends Controller
         $slides = Carousel::where('status', 1)->get();
         $tours = Tour::where('status', 1)->where('featured', 1)->limit(6)->get();
         $month = MonthTrip::first();
-        $offer = Offer::first();
+        // $offer = Offer::first();
         $categories = TourCategory::all();
         $instaPosts = Insta::take(6)->get();
         $partners = Partner::all();
         return view('frontend.index')
             ->withFeatured($tours)
-            ->withOffer($offer)
+            // ->withOffer($offer)
             ->withMonth($month)
             ->withCategories($categories)
             ->withSlides($slides)
