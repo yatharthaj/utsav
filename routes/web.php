@@ -106,5 +106,5 @@ Route::name('frontend-')->group(function () {
     Route::post('/join-group/{slug}/step-3','PostFrontendController@postJoin')->name('joinStep3');
     Route::get('/our-team', 'GetFrontendController@team');
     Route::get('/about', 'GetFrontendController@templateAbout');
-    Route::get('/insta', 'GetFrontendController@Instagram');
+    Route::get('/fetch-insta', 'GetFrontendController@Instagram');
 });

@@ -30,12 +30,12 @@ class GetFrontendController extends Controller
         $instaPosts = Insta::take(6)->get();
         $partners = Partner::all();
         return view('frontend.index')
-            ->withFeatured($tours)
+        ->withFeatured($tours)
             // ->withOffer($offer)
-            ->withMonth($month)
-            ->withCategories($categories)
-            ->withSlides($slides)
-            ->withFeeds($instaPosts)
+        ->withMonth($month)
+        ->withCategories($categories)
+        ->withSlides($slides)
+        ->withFeeds($instaPosts)
         ->withPartners($partners);
     }
 
@@ -43,7 +43,7 @@ class GetFrontendController extends Controller
     {
         $tour = Tour::where('slug', $slug)->first();
         $itineraries = Itinerary::where('tour_id','=', $tour->id)
-            ->orderBy('id', 'asc')->get();
+        ->orderBy('id', 'asc')->get();
         $departures = $tour->departure()->FixedDates($tour->id, date('m'), date('Y'))->get();
 
 //        $similars = Tour::whereHas('category', function ($r) use ($tour) {
@@ -54,18 +54,18 @@ class GetFrontendController extends Controller
 //            ->get();
 //        dd($tour);
         return view('frontend.tour.detail')
-            ->withTour($tour)
-            ->withItineraries($itineraries)
-            ->withDepartures($departures);
+        ->withTour($tour)
+        ->withItineraries($itineraries)
+        ->withDepartures($departures);
     }
 
     public function ajaxsearchdeparture(Request $request)
     {
         $tour = Tour::find($request->tour_id);
         $departures = Departure::where('tour_id', '=', $request->tour_id)
-            ->whereMonth('start', '=', $request->month)
-            ->whereYear('start', '=', $request->year)
-            ->get();
+        ->whereMonth('start', '=', $request->month)
+        ->whereYear('start', '=', $request->year)
+        ->get();
 
         return view('frontend.tour.dates', compact('departures', 'tour'));
     }
@@ -99,8 +99,8 @@ class GetFrontendController extends Controller
     {
         $tour = Tour::where('id', $request->tour_id)->first();
         return view('frontend.book.book-step2')
-            ->withRequest($request)
-            ->withTour($tour);
+        ->withRequest($request)
+        ->withTour($tour);
     }
 
     public function joinStep1(Request $request, $slug)
@@ -108,23 +108,23 @@ class GetFrontendController extends Controller
         // dd($request->all());
         $tour = Tour::where('slug', '=', $slug)->first();
         return view('frontend.book.join-step1')
-            ->withTour($tour)
-            ->withRequest($request);
+        ->withTour($tour)
+        ->withRequest($request);
     }
 
     public function joinStep2(Request $request)
     {
         $tour = Tour::where('id', $request->tour_id)->first();
         return view('frontend.book.join-step2')
-            ->withRequest($request)
-            ->withTour($tour);
+        ->withRequest($request)
+        ->withTour($tour);
     }
 
     public function team()
     {
         $members = Team::orderBy('id','asc')->get();
         return view('frontend.team')
-            ->withMembers($members);
+        ->withMembers($members);
     }
 
     public function templateAbout()
@@ -134,14 +134,20 @@ class GetFrontendController extends Controller
 
     public function instagram()
     {
-//        $instafeeds = new Instagram('5365129520.1677ed0.9a5ea6d9ae654821a210484962ecc42c');
-//        $feeds = $instafeeds->media();
-//        foreach ($feeds as $feed) {
-//            $instagram = new Insta;
-//            $instagram->link = $feed->images->standard_resolution->url;
-//            $instagram->caption = $feed->caption->text;
-//            $instagram->save();
-//        }
-//        return 'Done';
+     $instafeeds = new Instagram('5365129520.1677ed0.9a5ea6d9ae654821a210484962ecc42c');
+     $feeds = $instafeeds->media();
+     
+    $fromDBs = Insta::orderBy('id', 'desc')->take(20)->get(); //get last 20 rows from table
+    foreach( $posts as $post)
+    {
+        Insta::firstOrCreate(['link' => $post->images->low_resolution->url ,'caption' => 'caption']);
     }
-}
+         //    foreach ($feeds as $feed) {
+         //     $instagram = new Insta;
+         //     $instagram->link = $feed->images->standard_resolution->url;
+         //     $instagram->caption = $feed->caption->text;
+         //     $instagram->save();
+         // }
+         return 'Done';
+     }
+ }
