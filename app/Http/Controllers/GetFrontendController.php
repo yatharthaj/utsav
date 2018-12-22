@@ -135,8 +135,8 @@ class GetFrontendController extends Controller
     public function instagram()
     {
      $instafeeds = new Instagram('5365129520.1677ed0.9a5ea6d9ae654821a210484962ecc42c');
-     $feeds = $instafeeds->media();
-     
+     $posts = $instafeeds->media();
+
     $fromDBs = Insta::orderBy('id', 'desc')->take(20)->get(); //get last 20 rows from table
     foreach( $posts as $post)
     {
