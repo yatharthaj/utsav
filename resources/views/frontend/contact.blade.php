@@ -50,7 +50,7 @@
                 {{--gcaptcha start--}}
                 <div class="row">
                     <div class="form-field col s12">
-                        <div class="g-recaptcha" data-sitekey="6LdIpTUUAAAAAN4XAxsyo_AQqSoAqqUuuIybshqi"></div>
+                        <div class="g-recaptcha" data-sitekey="6Lfg0oUUAAAAAIWHzy2gRUwf7WgtoXToFt7HW24N"></div>
                     </div>
                 </div>
                 {{--gcaptcha end--}}

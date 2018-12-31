@@ -46,7 +46,7 @@
                 </div>
                 <div class="row uk-margin-left uk-margin-right uk-padding-small uk-padding-remove-vertical uk-padding-remove-top">
                     <div class="input-field col s12 uk-margin-remove-top uk-padding-remove-vertical">
-                        <div class="g-recaptcha" data-sitekey="6LdIpTUUAAAAAN4XAxsyo_AQqSoAqqUuuIybshqi"></div>
+                        <div class="g-recaptcha" data-sitekey="6Lfg0oUUAAAAAIWHzy2gRUwf7WgtoXToFt7HW24N"></div>
                     </div>
                 </div>
 
