@@ -30,7 +30,7 @@ class Inquiry extends Mailable
     {
         $this->from($this->data['email']);
         $this->subject($this->data['subject']);
-        $this->to('mail@nepalskiguides.com');
+        $this->to('skiguidesnepal@gmail.com');
         $this->replyTo($this->data['email']);
         return $this->markdown('emails.inquiry');
     }
