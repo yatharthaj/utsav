@@ -66,7 +66,7 @@
 </div>
 <!-- content end -->
 <!-- Special block start -->
-@if(!empty($offer->message))
+{{-- @if(!empty($offer->message)) --}}
 <div class="parallax-container center valign-wrapper" id="offer">
     <div class="parallax"><img
         src="{{asset('img/banner/annapurna.jpg')}}">
@@ -80,7 +80,7 @@
         </div>
     </div>
 </div>
-@endif
+{{-- @endif --}}
 <!-- Special block start -->
 <div class="container-fluid">
     <h2 class="center-align">TOP ADVENTURES</h2>

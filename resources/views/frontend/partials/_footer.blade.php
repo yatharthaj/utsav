@@ -138,7 +138,7 @@
                 </ul>
             </div>
             <div class="col s12 m3 l3">
-                <h6 class="white-text">Contact Nepal Ski Guides</h6>
+                <h6 class="white-text">Contact Ski Guides Nepal</h6>
                 <ul class="footer-contact">
                     <li><i class="fas fa-phone"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->phone }}</a></li>
                     <li><i class="fas fa-mobile-alt"></i><a class="grey-text text-lighten-3 " href="#!"> {{ $fcontact->mobile }}</a></li>
@@ -153,7 +153,7 @@
             <a class="grey-text text-lighten-4 left uk-margin-left" href="{{$fcontact->facebook}}"><i class="fab fa-facebook"></i></a>
             <a class="grey-text text-lighten-4 left uk-margin-left" href="{{$fcontact->twitter}}"><i class="fab fa-twitter"></i></a>
             <a class="grey-text text-lighten-4 left uk-margin-left" href="{{$fcontact->instagram}}"><i class="fab fa-instagram"></i></a>
-            <a class="grey-text text-lighten-4 right uk-margin-right" >   ©  Copyright 2018 Nepal Ski Guides</a>
+            <a class="grey-text text-lighten-4 right uk-margin-right" >   ©  Copyright 2018  Ski Guides Nepal</a>
         </div>
     </div>
 
