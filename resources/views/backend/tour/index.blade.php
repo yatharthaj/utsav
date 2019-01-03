@@ -29,7 +29,7 @@
                             <tr>
                             <th>{{$tour->title}}</th>
                             <th>{{$tour->days}}</th>
-                            <th>{{$tour->category->name}}</th>
+                            {{-- <th>{{$tour->category->name}}</th> --}}
                             <th>
                                 @if($tour->mtitle)
                                     <i class="fa fa-check-circle-o text-success"></i>
