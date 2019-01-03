@@ -198,7 +198,7 @@
 <section class="social">
     <div class="row">
         <div class="col s12 m6 l6 uk-padding-remove-horizontal" id="insta-wrapper">
-            <h3 class="center-align">#nepalskiguide</h3>
+            <h3 class="center-align">#skiguidesnepal</h3>
             @foreach(array_chunk($feeds->all() ,3) as $row)
             <div class="row insta-row">
                 @foreach($row as $feed)
@@ -211,7 +211,7 @@
 
         </div>
         <div class="col s12 m6 l6 " id="youtube-wrapper">
-            <h3 class="center-align">Nepal Ski Guide Stories</h3>
+            <h3 class="center-align"> Ski Guides Nepal Stories</h3>
             <div class="video-container">
                 <iframe width="853" height="640" src="https://www.youtube.com/embed/7ZXWtxc5Xxk" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
