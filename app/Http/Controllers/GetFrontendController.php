@@ -25,13 +25,13 @@ class GetFrontendController extends Controller
         $slides = Carousel::where('status', 1)->get();
         $tours = Tour::where('status', 1)->where('featured', 1)->limit(6)->get();
         $month = MonthTrip::first();
-        // $offer = Offer::first();
+        $offer = Offer::firstOrFail();
         $categories = TourCategory::all();
         $instaPosts = Insta::take(6)->get();
         $partners = Partner::all();
         return view('frontend.index')
         ->withFeatured($tours)
-            // ->withOffer($offer)
+        ->withOffer($offer)
         ->withMonth($month)
         ->withCategories($categories)
         ->withSlides($slides)
@@ -134,8 +134,8 @@ class GetFrontendController extends Controller
 
     public function instagram()
     {
-     $instafeeds = new Instagram('5365129520.1677ed0.9a5ea6d9ae654821a210484962ecc42c');
-     $posts = $instafeeds->media();
+       $instafeeds = new Instagram('5365129520.1677ed0.9a5ea6d9ae654821a210484962ecc42c');
+       $posts = $instafeeds->media();
 
     $fromDBs = Insta::orderBy('id', 'desc')->take(20)->get(); //get last 20 rows from table
     foreach( $posts as $post)
@@ -148,6 +148,6 @@ class GetFrontendController extends Controller
          //     $instagram->caption = $feed->caption->text;
          //     $instagram->save();
          // }
-         return 'Done';
-     }
- }
+    return 'Done';
+}
+}
