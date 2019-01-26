@@ -31,7 +31,7 @@ class CreateContactDetailsTable extends Migration
             $table->string('linkedin')->nullable();
             $table->string('whats_app')->nullable();
             $table->string('skype')->nullable();
-            $table->string('google_map_link')->nullable();
+            $table->text('google_map_link')->nullable();
             $table->timestamps();
         });
     }

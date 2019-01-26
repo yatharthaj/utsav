@@ -19,7 +19,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
-    <title>Nepal Ski Guide</title>
+    <title>Ski Guides Nepal</title>
     <meta name="description" content="Page description. No longer than 155 characters."/>
     @yield('page-meta')
     @yield('product-meta')
