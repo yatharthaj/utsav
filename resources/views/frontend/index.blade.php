@@ -45,13 +45,13 @@
 
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid trip-wrapper">
     <div class="row">
         <div class="col s12 m6 l6 cat">
             @include('frontend.partials._tripadvisor')
         </div>
-        <div class="col s12 m6 l6 intro">
-            <h5 class="center-align uk-margin-remove-vertical">Crafted Ski Tours - Lasting Memories</h5>
+        <div class="col s12 m6 l6 intro uk-margin-top">
+            <h5 class="center-align">Crafted Ski Tours - Lasting Memories</h5>
             <p>We seek to promote the skiing culture in Nepal in days to come. apart from mainstream treks, Skiing
                 Is complete new recreation activity in Nepal however, we have witnessed professional skiers who
                 successfully accomplished skiing activity in the Himalayas. Nepal and its Himalayas have good
@@ -126,7 +126,7 @@
 {{-- trip of the month start --}}
 @if(!empty($month))
 <section class="tofm-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid tofm-wrap">
         <div class="row center-align">
             <h5 class="uk-margin-remove-vertical">Trip of the month</h5>
         </div>
@@ -142,18 +142,18 @@
                 </p>
                 <div class="show-on-medium-and-down">
                     <div class="tofm-meta-wrapper  uk-margin-remove-vertical">
-                        <div class="col s4 m4 l4">
+                        <div class="col s12 m4 l4 uk-margin-small-top">
                             <div class="col s6 m4 l4">
                                 <i class="far fa-calendar-alt"></i>
                             </div>
-                            <div class="col s8 m8 l8">
+                            <div class="col s6 m8 l8">
                                 <p class="uk-margin-remove-vertical dodger-blue-text darken-1">Duration</p>
                                 <span>
                                     {{$month->tour->days}} Days
                                 </span>
                             </div>
                         </div>
-                        <div class="col s12 m4 l4">
+                        <div class="col s12 m4 l4 uk-margin-small-top">
                             <div class="col s6 m4 l4">
                                 <i class="fas fa-signal"></i>
                             </div>
@@ -164,7 +164,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col s12 m4 l4">
+                        <div class="col s12 m4 l4 uk-margin-small-top">
                             <div class="col s6 m4 l4">
                                 <i class="fas fa-dollar-sign"></i>
                             </div>
@@ -180,7 +180,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="center-align heading-button uk-padding-large">
+                        <div class="center-align heading-button uk-padding-large uk-margin-medium-bottom">
                             <a class="waves-effect waves-light btn btn-large tofm-meta-wrapper-buttom"
                             href="{{ route('frontend-tourDetail',[$month->tour->slug]) }}">Discover</a>
                         </div>

@@ -522,11 +522,12 @@ a.middle-indicator-text {
     font-size: 36px;
   }
   span {
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 15px;
   }
   p {
-    font-weight: 500;
+    font-weight: bold;
+    font-size:18px;
   }
 }
 
@@ -708,12 +709,19 @@ a.middle-indicator-text {
   width: auto;
 }
 
-  .featured-ski, .featured-adventure, .featured-sustain {
+  .featured-ski{
     width: 80px;
     height: 80px;
     margin: 0 auto;
-    background-image: url('/img/featured-icons.png');
+    // background-image: url('/img/featured-icons.png');
   }
+  ..featured-adventure{
+     background-image: url('/img/advneure.png');
+  }
+  .featured-sustain{
+       background-image: url('/img/SKI-trans.png');
+  } 
+
 
   .featured-ski {
     background-position: -10px -10px;
@@ -774,7 +782,7 @@ a.middle-indicator-text {
   .brand-logo {
     img {
       width: 115px;
-      height: 65px;
+      height: 60px;
     }
   }
 
@@ -905,5 +913,26 @@ a.middle-indicator-text {
 }
 
 .packgae-wrapper{
-  width:90%;
+  width:90% !important;
+}
+@media only screen and (min-width: 601px){
+  .package-wrapper{
+    width: 90% !important;
+}
+}
+.trip-wrapper{
+  width:90% !important;
+}
+@media only screen and (min-width: 601px){
+  .trip-wrapper{
+    width: 90% !important;
+}
+}
+.tofm-wrap{
+  width:90% !important;
+}
+@media only screen and (min-width: 601px){
+  .tofm-wrap{
+    width: 90% !important;
+}
 }
