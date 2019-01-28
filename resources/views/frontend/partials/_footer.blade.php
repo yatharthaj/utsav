@@ -32,19 +32,30 @@
                     @endif
                 </ul> --}}
                 <div class="row">
-                    <div class="col s12 m6 l3">
-                        <img  width="80" src="{{ asset('img/Nepal-Toursim-Board.jpg') }}">
+                    <h4>We are affliated to:</h4>
+                    <div class="col s3 m3 l3">
+                        <img  width="62" src="{{ asset('img/cntb.png') }}">
                     </div>
-                    <div class="col s12 m6 l3">
-                        <img  width="80" src="{{ asset('img/nsff.jpg') }}">
+                    <div class="col s3 m3 l3">
+                        <img  width="62" src="{{ asset('img/keep.jpg') }}">
                     </div>
-                    <div class="col s12 m6 l3">
-                        <img  width="80" src="{{ asset('img/NMA.png') }}">
+                    <div class="col s3 m3 l3">
+                        <img  width="62" src="{{ asset('img/cNMA.png') }}">
                     </div>
-                    <div class="col s12 m6 l3">
-                        <img  width="80" src="{{ asset('img/nep-gov.png') }}">
+                    <div class="col s3 m3 l3">
+                        <img  width="62" src="{{ asset('img/cnep-gov.png') }}">
                     </div>
-                  </div>
+                </div>
+                <div class="row">
+                    <h4>We accept</h4>
+                    <div class="col s6 m6 l6">
+                        <img  src="{{ asset('img/visa.png') }}">
+                    </div>
+                    <div class="col s6 m6 l6">
+                        <img  src="{{ asset('img/mas.png') }}">
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

@@ -13,7 +13,7 @@
 
 <!-- heading start -->
 <div class="container-fluid heading-wrapper">
-    <h5 class="center-align heading-title">SPLASH RESPONSIBLE TRAVEL ALL OVER</h5>
+    <h3 class="center-align heading-title">SPLASH RESPONSIBLE TRAVEL ALL OVER</h3>
     <p class="center-align uk-margin-medium-bottom heading-para"><i>Striving to be the Nepal's only most Eco-Friendly Ski
     Touring Experience !</i></p>
 </div>
@@ -51,7 +51,7 @@
             @include('frontend.partials._tripadvisor')
         </div>
         <div class="col s12 m6 l6 intro uk-margin-top">
-            <h5 class="center-align">Crafted Ski Tours - Lasting Memories</h5>
+            <h3 class="center-align">Crafted Ski Tours - Lasting Memories</h3>
             <p>We seek to promote the skiing culture in Nepal in days to come. apart from mainstream treks, Skiing
                 Is complete new recreation activity in Nepal however, we have witnessed professional skiers who
                 successfully accomplished skiing activity in the Himalayas. Nepal and its Himalayas have good
@@ -82,9 +82,9 @@
 </div>
 {{-- @endif --}}
 <!-- Special block start -->
-<div class="container-fluid">
-    <h5 class="center-align">TOP ADVENTURES</h5>
-    <p class="center-align">Our collection of the most popular adventures in 2018</p>
+<div class="container-fluid  heading-wrapper">
+    <h3 class="center-align heading-title">TOP ADVENTURES</h3>
+    <p class="center-align heading-para">Our collection of the most popular adventures in 2018</p>
     <hr>
 </div>
 <!-- package start -->
@@ -126,9 +126,9 @@
 {{-- trip of the month start --}}
 @if(!empty($month))
 <section class="tofm-wrapper">
-    <div class="container-fluid tofm-wrap">
-        <div class="row center-align">
-            <h5 class="uk-margin-remove-vertical">Trip of the month</h5>
+    <div class="container-fluid tofm-wrap ">
+        <div class="row center-align heading-wrapper">
+            <h3 class="uk-margin-remove-vertical heading-title">Trip of the month</h3>
         </div>
         <div class="row">
             <div class="col s12 m6 l6 uk-padding-remove-horizontal" id="tofm-img-wrapper">
@@ -197,8 +197,8 @@
 {{-- youtube,instagram start--}}
 <section class="social">
     <div class="row">
-        <div class="col s12 m6 l6 uk-padding-remove-horizontal" id="insta-wrapper">
-            <h5 class="center-align">#skiguidesnepal</h5>
+        <div class="col s12 m6 l6 uk-padding-remove-horizontal heading-wrapper" id="insta-wrapper">
+            <h3 class="center-align heading-title">#skiguidesnepal</h3>
             @foreach(array_chunk($feeds->all() ,3) as $row)
             <div class="row insta-row">
                 @foreach($row as $feed)
@@ -210,8 +210,8 @@
             @endforeach
 
         </div>
-        <div class="col s12 m6 l6 " id="youtube-wrapper">
-            <h5 class="center-align"> Ski Guides Nepal Stories</h5>
+        <div class="col s12 m6 l6 heading-wrapper " id="youtube-wrapper">
+            <h3 class="center-align heading-title"> Ski Guides Nepal Stories</h3>
             <div class="video-container">
                 <iframe width="853" height="640" src="https://www.youtube.com/embed/7ZXWtxc5Xxk" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

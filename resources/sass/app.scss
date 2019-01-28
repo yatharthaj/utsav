@@ -715,7 +715,7 @@ a.middle-indicator-text {
     margin: 0 auto;
     // background-image: url('/img/featured-icons.png');
   }
-  ..featured-adventure{
+  .featured-adventure{
      background-image: url('/img/advneure.png');
   }
   .featured-sustain{
@@ -762,7 +762,7 @@ a.middle-indicator-text {
     li {
       a {
         white-space: nowrap;
-        padding: 20px;
+        padding: 9px;
       }
     }
   }
@@ -782,7 +782,7 @@ a.middle-indicator-text {
   .brand-logo {
     img {
       width: 115px;
-      height: 60px;
+      height: 5footerpx;
     }
   }
 
@@ -897,20 +897,17 @@ a.middle-indicator-text {
 
 //index page heading-title
 
-// @media (min-width: 360px) and (max-width: 812px) {
+@media (min-width: 360px) and (max-width: 812px) {
   
-// .heading-wrapper{
-//   .heading-title{
-//       font-size:14px;
-//   }
-// }
-  
-// }
-
-
-.heading-title{
-  font-size:1.0rem;
+.heading-wrapper{
+  .heading-title{
+      font-size:14px;
+  }
 }
+  
+}
+
+
 
 .packgae-wrapper{
   width:90% !important;

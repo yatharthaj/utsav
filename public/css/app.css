@@ -10025,12 +10025,13 @@ a.middle-indicator-text {
 }
 
 .tofm-meta-wrapper span {
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .tofm-meta-wrapper p {
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 #insta-wrapper .insta-row {
@@ -10195,13 +10196,18 @@ a.middle-indicator-text {
   width: auto;
 }
 
-.featured-ski,
-.featured-adventure,
-.featured-sustain {
+.featured-ski {
   width: 80px;
   height: 80px;
   margin: 0 auto;
-  background-image: url("/img/featured-icons.png");
+}
+
+.featured-adventure {
+  background-image: url("/img/advneure.png");
+}
+
+.featured-sustain {
+  background-image: url("/img/SKI-trans.png");
 }
 
 .featured-ski {
@@ -10238,7 +10244,7 @@ a.middle-indicator-text {
 
 .footer-contact li a {
   white-space: nowrap;
-  padding: 20px;
+  padding: 9px;
 }
 
 .owl-height {
@@ -10253,7 +10259,7 @@ a.middle-indicator-text {
 
 .brand-logo img {
   width: 115px;
-  height: 65px;
+  height: 5footerpx;
 }
 
 #single-dropdown {
@@ -10346,5 +10352,47 @@ a.middle-indicator-text {
 
 .tab a i {
   margin-top: 12px;
+}
+
+@media (min-width: 360px) and (max-width: 812px) {
+  .heading-wrapper .heading-title {
+    font-size: 14px;
+  }
+}
+
+.packgae-wrapper {
+  width: 90% !important;
+}
+
+@media only screen and (min-width: 601px) {
+  .package-wrapper {
+    width: 90% !important;
+  }
+}
+
+.trip-wrapper {
+  width: 90% !important;
+}
+
+@media only screen and (min-width: 601px) {
+  .trip-wrapper {
+    width: 90% !important;
+  }
+}
+
+.tofm-wrap {
+  width: 90% !important;
+}
+
+@media only screen and (min-width: 601px) {
+  .tofm-wrap {
+    width: 90% !important;
+  }
+}
+
+.form-row-wrapper,
+.form-col-wrapper {
+  margin-left: -4.75rem !important;
+  margin-right: -4.75em !important;
 }
 
