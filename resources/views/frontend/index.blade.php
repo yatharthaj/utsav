@@ -94,7 +94,7 @@
         <div class="col s12 m4 l4">
             <div class="card">
                 <div class="card-image">
-                    <img src="{{$tour->featuredImage->thumbnail}}" class="responsive-img">
+                     <a href="{{ route('frontend-tourDetail',[$tour->slug]) }}"><img src="{{$tour->featuredImage->thumbnail}}" class="responsive-img"></a>
                     <div class="featured-price white-text">
                         <span><sup>USD</sup>
                             @if(!empty($tour->price2))

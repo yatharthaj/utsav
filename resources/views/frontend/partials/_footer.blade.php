@@ -107,27 +107,17 @@
 <footer class="page-footer scooter darken-2">
     <div class="container-fluid">
         <div class="row">
-            <div class="col  s12 m3 l3">
-                <h6 class="white-text">Destinations</h6>
-                <ul class="footer-links">
-                    @if(!empty($fcountries))
-                    @foreach($fcountries as $country)
-                    <li><a href="#" class="white-text">{{ $country->name }}</a></li>
-                    @endforeach
-                    @endif
+            <div class="col s12 m4 l4">
+                <h6 class="white-text">Contact Ski Guides Nepal</h6>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-phone"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->phone }}</a></li>
+                    <li><i class="fas fa-mobile-alt"></i><a class="grey-text text-lighten-3 " href="#!"> {{ $fcontact->mobile }}</a></li>
+                    <li><i class="fas fa-envelope-open"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->email }}</a></li>
+                    <li><i class="fas fa-home"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->address .','. $fcontact->city }}</a></li>
                 </ul>
             </div>
-            <div class="col s12 m3 l3">
-                <h6 class="white-text">Activities</h6>
-                <ul class="footer-links">
-                    @if(!empty($factivities))
-                    @foreach($factivities as $activity)
-                    <li><a href="#" class="white-text">{{ $activity->name }}</a></li>
-                    @endforeach
-                    @endif
-                </ul>
-            </div>
-            <div class="col s12 m3 l3">
+      
+            <div class="col s12 m4 l4">
                 <h6 class="white-text">About</h6>
                 <ul class="footer-links">
                     @if(!empty($fpages))
@@ -137,14 +127,29 @@
                     @endif
                 </ul>
             </div>
-            <div class="col s12 m3 l3">
-                <h6 class="white-text">Contact Ski Guides Nepal</h6>
-                <ul class="footer-contact">
-                    <li><i class="fas fa-phone"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->phone }}</a></li>
-                    <li><i class="fas fa-mobile-alt"></i><a class="grey-text text-lighten-3 " href="#!"> {{ $fcontact->mobile }}</a></li>
-                    <li><i class="fas fa-envelope-open"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->email }}</a></li>
-                    <li><i class="fas fa-home"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->address .','. $fcontact->city }}</a></li>
-                </ul>
+            <div class="col  s12 m4 l4">
+         {{--        <h6 class="white-text">Destinations</h6>
+                <ul class="footer-links">
+                    @if(!empty($fcountries))
+                    @foreach($fcountries as $country)
+                    <li><a href="#" class="white-text">{{ $country->name }}</a></li>
+                    @endforeach
+                    @endif
+                </ul> --}}
+                <div class="row">
+                    <div class="col s12 m6 l3">
+                        <img  width="80" src="{{ assets('img/Nepal-Toursim-Board.jpg') }}">
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <img  width="80" src="{{ assets('img/nsff.jpg') }}">
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <img  width="80" src="{{ assets('img/NMA.png') }}">
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <img  width="80" src="{{ assets('img/nep-gov.png') }}">
+                    </div>
+                  </div>
             </div>
         </div>
     </div>

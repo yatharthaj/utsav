@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col s2">
+<div class="row form-row-wrapper">
+    <div class="col s2 form-col-wrap">
     </div>
     <div class="col s12 m12 l8 ">
         <div class="collection">
@@ -8,7 +8,7 @@
                 <div class="row uk-margin-left uk-padding-small uk-padding-remove-vertical">
                     <div class="input-field col s12 uk-margin-remove-top uk-padding-remove-vertical  uk-margin-small uk-margin-bottom">
                         <input id="hidden" type="hidden" class="validate" name="tourName" value="{{$tour->name}}">
-                        <label for="hidden"><h6>Quick Enquiry</h6></label>
+                        <label for="hidden"><h6 class="uk-margin-remove-horizon">Quick Enquiry</h6></label>
                     </div>
                 </div>
 
