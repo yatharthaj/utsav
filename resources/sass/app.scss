@@ -715,24 +715,20 @@ a.middle-indicator-text {
     margin: 0 auto;
     // background-image: url('/img/featured-icons.png');
   }
-  .featured-adventure{
-     background-image: url('/img/advneure.png');
-  }
-  .featured-sustain{
-       background-image: url('/img/SKI-trans.png');
-  } 
-
-
+ 
   .featured-ski {
     background-position: -10px -10px;
+    background-image: url('/img/SKI-trans.png');
   }
 
   .featured-adventure {
     background-position: -10px -110px;
+     background-image: url('/img/advneure.png');
   }
 
   .featured-sustain {
     background-position: -110px -10px;
+    background-image: url('/img/sustainable.png');
   }
 
   #product-tab {
@@ -939,3 +935,8 @@ a.middle-indicator-text {
     margin-right: -4.75em !important;
 }
 //form end
+//overview start
+.pro-wrapper{
+  width:90% !important;
+}
+//overview end

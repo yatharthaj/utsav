@@ -8,7 +8,7 @@
                 <div class="row uk-margin-left uk-padding-small uk-padding-remove-vertical">
                     <div class="input-field col s12 uk-margin-remove-top uk-padding-remove-vertical  uk-margin-small uk-margin-bottom">
                         <input id="hidden" type="hidden" class="validate" name="tourName" value="{{$tour->name}}">
-                        <label for="hidden"><h6 class="uk-margin-remove-horizon">Quick Enquiry</h6></label>
+                        <label for="hidden"><h6 class="uk-margin-remove">Quick Enquiry</h6></label>
                     </div>
                 </div>
 

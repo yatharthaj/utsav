@@ -1,5 +1,16 @@
-@section('product-meta')
-    @include('backend.partials._meta-product')
+@section('mtitle'){!! $tour->mtitle !!}@stop
+@section('title'){!! ucfirst($tour->title) !!}-{{$tour->days}} @if($tour->days > 1) Days @else Day @endif
+@stop
+@section('description'){!! $tour->description !!}@stop
+@section('twitter')
+<meta name="twitter:data1" content="${{ $tour->price }}">
+<meta name="twitter:label1" content="Price">
+<meta name="twitter:data2" content="{{ $tour->difficulty->name }}">
+<meta name="twitter:label2" content="Difficulty">
+@stop
+@section('og')
+<meta property="og:price:amount" content="{{ $tour->price }}" />
+<meta property="og:price:currency" content="USD" />
 @stop
 @inject('countries','App\Http\Utilities\Country')
 @extends('layouts.frontend')
@@ -65,7 +76,7 @@
                 </div>
                 <div class="col s3 m3 l3 center ">
                     <a href="#"
-                       onclick="window.open('http://twitter.com/intent/tweet?url={{ url()->current()}};text=&amp;via=ascent_treks', '', 'width=626,height=436');
+                       onclick="window.open('http://twitter.com/intent/tweet?url={{ url()->current()}};text=&amp;via=skiguidesnepal', '', 'width=626,height=436');
                                return false;" target="_blank" title="Twitter">
                         <i class="fab fa-twitter"></i>
                         <span>Tweet</span>
@@ -76,13 +87,13 @@
                        onclick="window.open('https://plus.google.com/share?url={{url()->current()}}', '', 'width=626,height=436');
                                return false;" title="Google">
                         <i class="fab fa-google-plus-g"></i>
-                        <span>G+</span>
+                      
                     </a>
                 </div>
                 <div class="col s3 m3 l3 center ">
                     <a href="https://www.instagram.com/skiguidesnepal/" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
+                    <span>Insta</span>
                     </a>
                 </div>
             </div>
@@ -114,7 +125,7 @@
     <!-- tab end -->
     <!-- product start  -->
     <div id="overview" class="col s12">
-        <div class="container-fluid uk-padding-small">
+        <div class="container-fluid uk-padding-small pro-wrapper">
             <div class="row">
                 <div class="col s12 m12 l6">
                     <blockquote>All about {{$tour->title}}</blockquote>

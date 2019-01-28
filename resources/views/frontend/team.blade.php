@@ -55,18 +55,19 @@
 
                         </div>
                         <div class="card-content">
-                            <span class="review-title"><b>{{$member->name}}</b>, </span><i>{{$member->position}}</i>
+                            <span class="review-title"><b>{{$member->name}}</b>, </span>
+                            <span><i>{{$member->position}}</i></span>
                         </div>
                         <div class="card-action center-align">
                     <span class="" style="font-size: 24px;">
                         @if(!empty($member->fb))
-                            <a href="{{$member->fb}}" class="fab fa-facebook"></a>
+                            <a href="{{$member->fb}}"  target="_blank" class="fab fa-facebook"></a>
                         @endif
                         @if(!empty($member->insta))
-                            <a href="{{$member->insta}}" class="fab fa-instagram"></a>
+                            <a href="{{$member->insta}}"  target="_blank" class="fab fa-instagram"></a>
                         @endif
                         @if(!empty($member->linked))
-                            <a href="{{$member->linked}}" class="fab fa-linkedin"></a>
+                            <a href="{{$member->linked}}"  target="_blank" class="fab fa-linkedin"></a>
                         @endif
                     </span>
                         </div>

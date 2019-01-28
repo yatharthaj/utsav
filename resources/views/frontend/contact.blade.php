@@ -14,52 +14,66 @@
     <!-- form start -->
     <section>
         <div class="container">
-            <form method="POST" action="{{ route('frontend-postContact') }}">
-                @csrf
-                <div class="row">
-                    <div class="form-field col s12"
-                    ">
-                    <label for="full_name">Full Name</label>
-                    <input type="text" id="full_name" name="fullName" required>
+            <div class="row">
+                <div class="col s12 m8 l8">
+                    <form method="POST" action="{{ route('frontend-postContact') }}">
+                        @csrf
+                        <div class="row">
+                            <div class="form-field col s12"
+                            ">
+                            <label for="full_name">Full Name</label>
+                            <input type="text" id="full_name" name="fullName" required>
+                        </div>
+                        <div class="row">
+                            <div class="form-field col s12"
+                            ">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required name="email">
+                        </div>
+                        <div class="row">
+                            <div class="form-field col s12"
+                            ">
+                            <label for="number">Phone Number</label>
+                            <input type="text" id="number" class="phone">
+                        </div>
+                        <div class="row">
+                            <div class="form-field col s12"
+                            ">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required name="subject">
+                        </div>
+                        <div class="row">
+                            <div class="form-field col s12"
+                            ">
+                            <label for="message">Message</label>
+                            <textarea id="textarea1" class="materialize-textarea" cols="30" rows="10" required
+                                      name="contactMessage"></textarea>
+                        </div>
+                        {{--gcaptcha start--}}
+                        <div class="row">
+                            <div class="form-field col s12">
+                                <div class="g-recaptcha" data-sitekey="6Lfg0oUUAAAAAIWHzy2gRUwf7WgtoXToFt7HW24N"></div>
+                            </div>
+                        </div>
+                        {{--gcaptcha end--}}
+                        <div class="row">
+                            <div class="form-field col s12">
+                                <button class="btn-large waves-effect book" type="submit">Send <i class="material-icons right">send</i></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="row">
-                    <div class="form-field col s12"
-                    ">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required name="email">
+                <div class="col s12 m4 l4">
+                    <h6 class="white-text"> Ski Guides Nepal</h6>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->phone }}</a></li>
+                        <li><i class="fas fa-mobile-alt"></i><a class="grey-text text-lighten-3 " href="#!"> {{ $fcontact->mobile }}</a></li>
+                        <li><i class="fas fa-envelope-open"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->email }}</a></li>
+                        <li><i class="fas fa-home"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->address .','. $fcontact->city }}</a></li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="form-field col s12"
-                    ">
-                    <label for="number">Phone Number</label>
-                    <input type="text" id="number" class="phone">
-                </div>
-                <div class="row">
-                    <div class="form-field col s12"
-                    ">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" required name="subject">
-                </div>
-                <div class="row">
-                    <div class="form-field col s12"
-                    ">
-                    <label for="message">Message</label>
-                    <textarea id="textarea1" class="materialize-textarea" cols="30" rows="10" required
-                              name="contactMessage"></textarea>
-                </div>
-                {{--gcaptcha start--}}
-                <div class="row">
-                    <div class="form-field col s12">
-                        <div class="g-recaptcha" data-sitekey="6Lfg0oUUAAAAAIWHzy2gRUwf7WgtoXToFt7HW24N"></div>
-                    </div>
-                </div>
-                {{--gcaptcha end--}}
-                <div class="row">
-                    <div class="form-field col s12">
-                        <button class="btn-large waves-effect book" type="submit">Send <i class="material-icons right">send</i></button>
-                    </div>
-                </div>
-            </form>
+            </div>
+           
         </div>
     </section>
     <!-- form end -->

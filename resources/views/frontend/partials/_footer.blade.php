@@ -23,47 +23,29 @@
                 </ul>
             </div>
             <div class="col  s12 m4 l4">
-         {{--        <h6 class="white-text">Destinations</h6>
-                <ul class="footer-links">
-                    @if(!empty($fcountries))
-                    @foreach($fcountries as $country)
-                    <li><a href="#" class="white-text">{{ $country->name }}</a></li>
-                    @endforeach
-                    @endif
-                </ul> --}}
                 <div class="row">
-                    <h4>We are affliated to:</h4>
-                    <div class="col s3 m3 l3">
-                        <img  width="62" src="{{ asset('img/cntb.png') }}">
+                    <h6>We are affliated to:</h6>
+                    <div class="col s6 m6 l3">
+                        <img  width="62" src="{{ asset('img/govski.png') }}">
                     </div>
-                    <div class="col s3 m3 l3">
+                    <div class="col s6 m6 l3">
                         <img  width="62" src="{{ asset('img/keep.jpg') }}">
                     </div>
-                    <div class="col s3 m3 l3">
-                        <img  width="62" src="{{ asset('img/cNMA.png') }}">
+                    <div class="col s6 m6 l3">
+                        <img  width="62" src="{{ asset('img/nmaski.png') }}">
                     </div>
-                    <div class="col s3 m3 l3">
-                        <img  width="62" src="{{ asset('img/cnep-gov.png') }}">
+                    <div class="col s6 m6 l3">
+                        <img  width="62" src="{{ asset('img/ntbski.png') }}">
                     </div>
-                </div>
-                <div class="row">
-                    <h4>We accept</h4>
-                    <div class="col s6 m6 l6">
-                        <img  src="{{ asset('img/visa.png') }}">
-                    </div>
-                    <div class="col s6 m6 l6">
-                        <img  src="{{ asset('img/mas.png') }}">
-                    </div>
-
                 </div>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
-            <a class="grey-text text-lighten-4 left uk-margin-left" href="{{$fcontact->facebook}}"><i class="fab fa-facebook"></i></a>
-            <a class="grey-text text-lighten-4 left uk-margin-left" href="{{$fcontact->twitter}}"><i class="fab fa-twitter"></i></a>
-            <a class="grey-text text-lighten-4 left uk-margin-left" href="{{$fcontact->instagram}}"><i class="fab fa-instagram"></i></a>
+            <a class="grey-text text-lighten-4 left uk-margin-left" target="_blank" href="{{$fcontact->facebook}}"><i class="fab fa-facebook"></i></a>
+            <a class="grey-text text-lighten-4 left uk-margin-left"  target="_blank"  href="{{$fcontact->twitter}}"><i class="fab fa-twitter"></i></a>
+            <a class="grey-text text-lighten-4 left uk-margin-left"   target="_blank" href="{{$fcontact->instagram}}"><i class="fab fa-instagram"></i></a>
             <a class="grey-text text-lighten-4 right uk-margin-right" >   ©  Copyright 2018  Ski Guides Nepal</a>
         </div>
     </div>

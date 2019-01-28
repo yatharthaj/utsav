@@ -10202,24 +10202,19 @@ a.middle-indicator-text {
   margin: 0 auto;
 }
 
-.featured-adventure {
-  background-image: url("/img/advneure.png");
-}
-
-.featured-sustain {
-  background-image: url("/img/SKI-trans.png");
-}
-
 .featured-ski {
   background-position: -10px -10px;
+  background-image: url("/img/SKI-trans.png");
 }
 
 .featured-adventure {
   background-position: -10px -110px;
+  background-image: url("/img/advneure.png");
 }
 
 .featured-sustain {
   background-position: -110px -10px;
+  background-image: url("/img/sustainable.png");
 }
 
 #product-tab li a {
@@ -10394,5 +10389,9 @@ a.middle-indicator-text {
 .form-col-wrapper {
   margin-left: -4.75rem !important;
   margin-right: -4.75em !important;
+}
+
+.pro-wrapper {
+  width: 90% !important;
 }
 

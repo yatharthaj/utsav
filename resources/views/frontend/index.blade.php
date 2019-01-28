@@ -128,16 +128,16 @@
 <section class="tofm-wrapper">
     <div class="container-fluid tofm-wrap ">
         <div class="row center-align heading-wrapper">
-            <h3 class="uk-margin-remove-vertical heading-title">Trip of the month</h3>
+            <h3 class="uk-margin-remove heading-title">Trip of the month</h3>
         </div>
         <div class="row">
-            <div class="col s12 m6 l6 uk-padding-remove-horizontal" id="tofm-img-wrapper">
+            <div class="col s12 m6 l6 uk-padding-removel" id="tofm-img-wrapper">
                 <img class="responsive-img" src="{{asset($month->tour->featuredImage->path)}}"
                 alt="{{$month->tour->title}}">
             </div>
             <div class="col s12 m6 l6">
                 <h3 class="center-align">{{$month->tour->title}}</h3>
-                <p class="flow-text ">
+                <p class="flow-text uk-margin-left ">
                     {!! $month->tour->description !!}
                 </p>
                 <div class="show-on-medium-and-down">
