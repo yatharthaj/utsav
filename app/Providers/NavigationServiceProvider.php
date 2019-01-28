@@ -48,6 +48,7 @@ class NavigationServiceProvider extends ServiceProvider
         view()->composer('frontend.partials._footer','App\Http\Composers\FrontendComposer@countries');        
         view()->composer('frontend.partials._footer','App\Http\Composers\FrontendComposer@pages');     
         view()->composer('frontend.partials._footer','App\Http\Composers\FrontendComposer@activity');     
-        view()->composer('frontend.partials._footer','App\Http\Composers\FrontendComposer@contact');               
+        view()->composer('frontend.partials._footer','App\Http\Composers\FrontendComposer@contact');
+        view()->composer('frontend.contact','App\Http\Composers\FrontendComposer@contact');               
     }    
 }
