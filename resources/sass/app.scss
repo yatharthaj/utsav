@@ -537,6 +537,10 @@ a.middle-indicator-text {
     margin-bottom: 12px;
   }
 }
+.social-row, .social-col {
+     margin-left: 0rem !important; 
+     margin-right: 0rem !important; 
+}
 
 .symbol {
   .symbol-icon {
@@ -777,7 +781,7 @@ a.middle-indicator-text {
   //logo
   .brand-logo {
     img {
-      width: 115px;
+      width: 90px;
       height: 5footerpx;
     }
   }
@@ -897,7 +901,7 @@ a.middle-indicator-text {
   
 .heading-wrapper{
   .heading-title{
-      font-size:14px;
+      font-size:27px;
   }
 }
   
@@ -905,7 +909,7 @@ a.middle-indicator-text {
 
 
 
-.packgae-wrapper{
+.package-wrapper{
   width:90% !important;
 }
 @media only screen and (min-width: 601px){
@@ -929,12 +933,7 @@ a.middle-indicator-text {
     width: 90% !important;
 }
 }
-//form start
-.form-row-wrapper, .form-col-wrapper{
-    margin-left: -4.75rem !important;
-    margin-right: -4.75em !important;
-}
-//form end
+
 //overview start
 .pro-wrapper{
   width:90% !important;

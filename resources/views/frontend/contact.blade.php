@@ -13,7 +13,7 @@
     <!-- title end -->
     <!-- form start -->
     <section>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col s12 m8 l8">
                     <form method="POST" action="{{ route('frontend-postContact') }}">
@@ -23,24 +23,28 @@
                             ">
                             <label for="full_name">Full Name</label>
                             <input type="text" id="full_name" name="fullName" required>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-field col s12"
                             ">
                             <label for="email">Email</label>
                             <input type="email" id="email" required name="email">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-field col s12"
                             ">
                             <label for="number">Phone Number</label>
                             <input type="text" id="number" class="phone">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-field col s12"
                             ">
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" required name="subject">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-field col s12"
@@ -48,6 +52,7 @@
                             <label for="message">Message</label>
                             <textarea id="textarea1" class="materialize-textarea" cols="30" rows="10" required
                                       name="contactMessage"></textarea>
+                            </div>
                         </div>
                         {{--gcaptcha start--}}
                         <div class="row">
@@ -64,12 +69,12 @@
                     </form>
                 </div>
                 <div class="col s12 m4 l4">
-                    <h6 class="white-text"> Ski Guides Nepal</h6>
+                    <h6 class="black-text"> Ski Guides Nepal</h6>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-phone"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->phone }}</a></li>
-                        <li><i class="fas fa-mobile-alt"></i><a class="grey-text text-lighten-3 " href="#!"> {{ $fcontact->mobile }}</a></li>
-                        <li><i class="fas fa-envelope-open"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->email }}</a></li>
-                        <li><i class="fas fa-home"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->address .','. $fcontact->city }}</a></li>
+                        <li><i class="fas fa-phone"></i><a class="black-text " href="#!">{{ $fcontact->phone }}</a></li>
+                        <li><i class="fas fa-mobile-alt"></i><a class="black-text " href="#!"> {{ $fcontact->mobile }}</a></li>
+                        <li><i class="fas fa-envelope-open"></i><a class="black-text " href="#!">{{ $fcontact->email }}</a></li>
+                        <li><i class="fas fa-home"></i><a class="black-text " href="#!">{{ $fcontact->address .','. $fcontact->city }}</a></li>
                     </ul>
                 </div>
             </div>

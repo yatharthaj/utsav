@@ -50,7 +50,7 @@
         <div class="col s12 m6 l6 cat">
             @include('frontend.partials._tripadvisor')
         </div>
-        <div class="col s12 m6 l6 intro uk-margin-top">
+        <div class="col s12 m6 l6 intro Uk-margin-remove">
             <h3 class="center-align">Crafted Ski Tours - Lasting Memories</h3>
             <p>We seek to promote the skiing culture in Nepal in days to come. apart from mainstream treks, Skiing
                 Is complete new recreation activity in Nepal however, we have witnessed professional skiers who
@@ -196,8 +196,8 @@
 
 {{-- youtube,instagram start--}}
 <section class="social">
-    <div class="row">
-        <div class="col s12 m6 l6 uk-padding-remove-horizontal heading-wrapper" id="insta-wrapper">
+    <div class="row social-row">
+        <div class="col s12 m6 l6 uk-padding-remove heading-wrapper social-col" id="insta-wrapper">
             <h3 class="center-align heading-title">#skiguidesnepal</h3>
             @foreach(array_chunk($feeds->all() ,3) as $row)
             <div class="row insta-row">
