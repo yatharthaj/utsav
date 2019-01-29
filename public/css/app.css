@@ -10206,21 +10206,19 @@ a.middle-indicator-text {
   width: 80px;
   height: 80px;
   margin: 0 auto;
+  background-image: url("/img/featured-icons.png");
 }
 
 .featured-ski {
   background-position: -10px -10px;
-  background-image: url("/img/SKI-trans.png");
 }
 
 .featured-adventure {
   background-position: -10px -110px;
-  background-image: url("/img/advneure.png");
 }
 
 .featured-sustain {
   background-position: -110px -10px;
-  background-image: url("/img/sustainable.png");
 }
 
 #product-tab li a {
