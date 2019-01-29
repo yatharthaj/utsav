@@ -31,7 +31,8 @@ class Booking extends Mailable
     {
         $this->from($this->data['email']);
         $this->subject($this->data['subject']);
-        $this->to('skiguidesnepal@gmail.com');
+        $this->to('inquiry@skiguidesnepal.com');
+        $this->cc('skiguidesnepal@gmail.com');
         $this->replyTo($this->data['email']);        
         return $this->markdown('emails.booking');
     }

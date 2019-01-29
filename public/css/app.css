@@ -10202,11 +10202,13 @@ a.middle-indicator-text {
   width: auto;
 }
 
-.featured-ski {
-  width: 80px;
-  height: 80px;
+.featured-ski,
+.featured-adventure,
+.featured-sustain {
+  width: 100px;
+  height: 100px;
+  background: url("/img/css_sprites.png");
   margin: 0 auto;
-  background-image: url("/img/featured-icons.png");
 }
 
 .featured-ski {
@@ -10214,11 +10216,11 @@ a.middle-indicator-text {
 }
 
 .featured-adventure {
-  background-position: -10px -110px;
+  background-position: -10px -250px;
 }
 
 .featured-sustain {
-  background-position: -110px -10px;
+  background-position: -10px -113px;
 }
 
 #product-tab li a {
