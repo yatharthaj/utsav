@@ -1,6 +1,3 @@
-@section('page-meta')
-@include('backend.partials._page-meta')
-@stop
 @extends('layouts.frontend')
 @section('content')
 @if(!empty($slides))

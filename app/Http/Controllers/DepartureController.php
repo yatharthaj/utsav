@@ -18,9 +18,9 @@ class DepartureController extends Controller
      */
     public function index()
     {
-        $collection = Departure::distinct()->select('tour_id')->get();
-        $departures = $collection->unique();
-        return view('backend.tour.departure.index')->withDepartures($departures);
+    	$collection = Departure::distinct()->select('tour_id')->get();
+    	$departures = $collection->unique();
+    	return view('backend.tour.departure.index')->withDepartures($departures);
     }
 
     /**
@@ -30,8 +30,8 @@ class DepartureController extends Controller
      */
     public function create()
     {
-        $tours = Tour::where('status', '=', 1)->get();
-        return view('backend.tour.departure.create')->withTours($tours);
+    	$tours = Tour::where('status', '=', 1)->get();
+    	return view('backend.tour.departure.create')->withTours($tours);
     }
 
     /**
@@ -42,38 +42,37 @@ class DepartureController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $start = $request->start;
-            $end = $request->end;
+    	try {
+    		if (strtotime($request->start) < strtotime($request->end)) {
+    			foreach ($request->tours as $id) {
+    				$start = $request->start;
+    				$end = $request->end;
+    				$tour = Tour::find($id);
+    				date_default_timezone_set('Asia/Kathmandu');
 
-            if (strtotime($start) < strtotime($end)) {
-                foreach ($request->tours as $id) {
-                    $tour = Tour::find($id);
-                    date_default_timezone_set('Asia/Kathmandu');
 
-
-                    while (strtotime($start) <= strtotime($end)) {
-                        $slot = explode('-', $request->slot);
-                        $departure = new Departure;
-                        $departure->tour_id = $tour->id;
-                        $departure->start = $start;
-                        $departure->end = date("Y-m-d", strtotime("+" . $tour->days . " days", strtotime($start)));
-                        $departure->slot = rand($slot[0], $slot[1]);
-                        $departure->price = $tour->price;
-                        $departure->save();
-                        $start = date("Y-m-d", strtotime("+" . $request->gap . " days", strtotime($start)));
-                    }
-                }
-            }
-            else{
-                Session::flash('danger', 'End date must be greater than start date. ');
-                return redirect()->back();
-            }
-        } catch (QueryException $e) {
-            return $e->getMessage();
-        }
-        Session::flash('success', 'Departure dates created with success.');
-        return redirect()->route('departure.index');
+    				while (strtotime($start) <= strtotime($end)) {
+    					$slot = explode('-', $request->slot);
+    					$departure = new Departure;
+    					$departure->tour_id = $tour->id;
+    					$departure->start = $start;
+    					$departure->end = date("Y-m-d", strtotime("+" . $tour->days . " days", strtotime($start)));
+    					$departure->slot = rand($slot[0], $slot[1]);
+    					$departure->price = $tour->price;
+    					$departure->save();
+    					$start = date("Y-m-d", strtotime("+" . $request->gap . " days", strtotime($start)));
+    				}
+    			}
+    		}
+    		else{
+    			Session::flash('danger', 'End date must be greater than start date. ');
+    			return redirect()->back();
+    		}
+    	} catch (QueryException $e) {
+    		return $e->getMessage();
+    	}
+    	Session::flash('success', 'Departure dates created with success.');
+    	return redirect()->route('departure.index');
     }
 
     /**
@@ -84,8 +83,8 @@ class DepartureController extends Controller
      */
     public function show($id)
     {
-        $tour = Tour::find($id);
-        return view('backend.tour.departure.show')->withTour($tour);
+    	$tour = Tour::find($id);
+    	return view('backend.tour.departure.show')->withTour($tour);
     }
 
     /**
@@ -119,8 +118,8 @@ class DepartureController extends Controller
      */
     public function destroy($id)
     {
-        $departure = Departure::findOrFail($id);
-        $departure->delete();
-        return response()->json($departure);
+    	$departure = Departure::findOrFail($id);
+    	$departure->delete();
+    	return response()->json($departure);
     }
 }
