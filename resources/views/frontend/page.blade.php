@@ -1,6 +1,3 @@
-@section('page-meta')
-	@include('backend.partials._page-meta')
-@stop
 @section('title')Nepal Ski Guides | {!! $datas->title !!}@endsection
 @section('desscription'){{$datas->description}}@endsection
 @extends('layouts.frontend')
