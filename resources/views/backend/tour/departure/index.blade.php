@@ -18,7 +18,7 @@
                         <thead>
                         <tr>
                             <th class="sort-alpha">Title</th>
-                            {{-- <th class="sort-numeric">Departure Dates</th> --}}
+                            <th class="sort-numeric">Departure Dates</th>
 
                             <th data-orderable="false">Action</th>
                         </tr>
@@ -27,7 +27,7 @@
                         @foreach($departures as $departure)
                             <tr>
                                 <th>{{$departure->tour->title}}</th>
-                                {{-- <th>{{$departure->unique()->count()}}</th> --}}
+                                <th>{{$departure->tour->count()}}</th>
                                 <th>
                                     <a href="{{route('departure.show',$departure->tour->id)}}" class="btn ink-reaction btn-raised btn-sm btn-info"><i class="fa fa-list-ul"></i> Show</a>
                                 </th>
