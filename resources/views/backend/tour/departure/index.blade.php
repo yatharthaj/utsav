@@ -27,7 +27,7 @@
                         @foreach($departures as $departure)
                             <tr>
                                 <th>{{$departure->tour->title}}</th>
-                                <th>{{$departure->count()}}</th>
+                                <th>{{$departure->tour->count()}}</th>
                                 <th>
                                     <a href="{{route('departure.show',$departure->tour->id)}}" class="btn ink-reaction btn-raised btn-sm btn-info"><i class="fa fa-list-ul"></i> Show</a>
                                 </th>
