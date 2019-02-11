@@ -1,4 +1,4 @@
-@section('title')Nepal Ski Guides | {!! $datas->title !!}@endsection
+@section('title'){!! $datas->title !!}| Nepal Ski Guides @endsection
 @section('desscription'){{$datas->description}}@endsection
 @extends('layouts.frontend')
 @section('content')
