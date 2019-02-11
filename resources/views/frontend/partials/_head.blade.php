@@ -19,7 +19,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
-    <title>Ski Guides Nepal</title>
+    <title>@yield('title','Ski Guides Nepal | The Spirit Of Ski Touring ')</title>
     <meta name="description" content="Striving to be the Nepal's only most Eco-Friendly Ski Touring and splitboarding company !"/>
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="product">
