@@ -17,4 +17,15 @@
 <script type="text/javascript" src="{{asset('js/mega-menu.js')}}"></script>
 @yield('scripts')
 @include('frontend.partials._message')
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '9ceb3c26216bb0cce1b03088ea5ba0d2a4000857';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
 </html>

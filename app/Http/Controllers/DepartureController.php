@@ -42,37 +42,35 @@ class DepartureController extends Controller
      */
     public function store(Request $request)
     {
-    	try {
-    		if (strtotime($request->start) < strtotime($request->end)) {
-    			foreach ($request->tours as $id) {
-    				$start = $request->start;
-    				$end = $request->end;
-    				$tour = Tour::find($id);
-    				date_default_timezone_set('Asia/Kathmandu');
-
-
-    				while (strtotime($start) <= strtotime($end)) {
-    					$slot = explode('-', $request->slot);
-    					$departure = new Departure;
-    					$departure->tour_id = $tour->id;
-    					$departure->start = $start;
-    					$departure->end = date("Y-m-d", strtotime("+" . $tour->days . " days", strtotime($start)));
-    					$departure->slot = rand($slot[0], $slot[1]);
-    					$departure->price = $tour->price;
-    					$departure->save();
-    					$start = date("Y-m-d", strtotime("+" . $request->gap . " days", strtotime($start)));
-    				}
-    			}
-    		}
-    		else{
-    			Session::flash('danger', 'End date must be greater than start date. ');
-    			return redirect()->back();
-    		}
-    	} catch (QueryException $e) {
-    		return $e->getMessage();
-    	}
-    	Session::flash('success', 'Departure dates created with success.');
-    	return redirect()->route('departure.index');
+        try {
+            if (strtotime($request->start) < strtotime($request->end)) {
+                foreach ($request->tours as $id) {
+                    $start = $request->start;
+                    $end = $request->end;
+                    $tour = Tour::find($id);
+                    date_default_timezone_set('Asia/Kathmandu');
+                    while (strtotime($start) <= strtotime($end)) {
+                        $slot = explode('-', $request->slot);
+                        $departure = new Departure;
+                        $departure->tour_id = $tour->id;
+                        $departure->start = $start;
+                        $departure->end = date("Y-m-d", strtotime("+" . $tour->days . " days", strtotime($start)));
+                        $departure->slot = rand($slot[0], $slot[1]);
+                        $departure->price = $tour->price;
+                        $departure->save();
+                        $start = date("Y-m-d", strtotime("+" . $request->gap . " days", strtotime($start)));
+                    }
+                }
+            }
+            else{
+                Session::flash('danger', 'End date must be greater than start date. ');
+                return redirect()->back();
+            }
+        } catch (QueryException $e) {
+            return $e->getMessage();
+        }
+        Session::flash('success', 'Departure dates created with success.');
+        return redirect()->route('departure.index');
     }
 
     /**
