@@ -41,15 +41,14 @@ class InstaFeed extends Command
 
         $feeds = new Instagram('5365129520.1677ed0.9a5ea6d9ae654821a210484962ecc42c');
         $posts = $feeds->media();
-        $insta = Insta::all();
-        foreach( $feeds as $feed)
+        $fromDBs = Insta::orderBy('id', 'desc')->take(20)->get(); //get last 20 rows from table
+        foreach( $posts as $post)
         {
-            if('a' == 'a')
-            {
-                echo 'Strings match.';
-            } else {
-                echo 'Strings do not match.';
-            }
+            Insta::firstOrCreate([
+                'thumb' => $post->images->thumbnail->url  ,
+                'link' => $post->images->standard_resolution->url  ,
+                'caption' => $post->caption->text
+            ]);
         }
 //        foreach($feeds)
     }
