@@ -3,7 +3,7 @@
 @component('mail::panel')
 User info: {!! $data['user_info'] !!}
 @endcomponent
-{$data['subject']}} <br>
+{{$data['subject']}} <br>
 Full name: {{$data['fullName']}}<br>
 Email    : <a href="mailto:{{$data['email'] }}">{{$data['email'] }}</a> <br>
 Mobile no.: {{$data['mobile']}}<br>
