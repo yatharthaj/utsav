@@ -140,6 +140,7 @@ class GetFrontendController extends Controller
     // $fromDBs = Insta::orderBy('id', 'desc')->take(20)->get(); //get last 20 rows from table
     foreach( $posts as $post)
     {
+        dd($post);
         Insta::firstOrCreate([
             'thumb' => $post->images->thumbnail->url  ,
             'link' => $post->link
