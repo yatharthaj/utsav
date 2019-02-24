@@ -88,7 +88,7 @@ class GetFrontendController extends Controller
     // {
     //     $datas = Page::where('slug','=', $slug)->first();
     //     return view('frontend.page')->withDatas($datas);
-    // }  
+    // }
     public function bookStep1($slug)
     {
         $tour = Tour::where('slug', '=', $slug)->first();
@@ -140,7 +140,12 @@ class GetFrontendController extends Controller
     $fromDBs = Insta::orderBy('id', 'desc')->take(20)->get(); //get last 20 rows from table
     foreach( $posts as $post)
     {
-        Insta::firstOrCreate(['link' => $post->images->low_resolution->url ,'caption' => 'caption']);
+        Insta::firstOrCreate([
+            'thumb' => $post->images->thumbnail->url  ,
+            'link' => $post->images->standard_resolution->url  ,
+            'caption' => $post->caption->text
+        ]);
+
     }
          //    foreach ($feeds as $feed) {
          //     $instagram = new Insta;
