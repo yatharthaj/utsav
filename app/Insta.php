@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Insta extends Model
 {
-        protected $fillable = ['link','caption'];
+        protected $fillable = ['link','thumb'];
 }
