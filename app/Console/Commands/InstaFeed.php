@@ -45,8 +45,8 @@ class InstaFeed extends Command
         foreach( $posts as $post)
         {
             Insta::firstOrCreate([
-                'thumb' => $post->images->thumbnail->url  ,
-                'link' => $post->images->standard_resolution->url
+                'thumb' => $post->images->low_resolution->url ,
+                'link' => $post->link
             ]);
         }
 //        foreach($feeds)
