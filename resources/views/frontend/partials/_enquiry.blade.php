@@ -7,14 +7,15 @@
                 @csrf
                 <div class="row uk-margin-left uk-padding-small uk-padding-remove-vertical">
                     <div class="input-field col s12 uk-margin-remove-top uk-padding-remove-vertical  uk-margin-small uk-margin-bottom">
-                        <input id="hidden" type="hidden" class="validate" name="tourName" value="{{$tour->name}}">
-                        <label for="hidden"><h6 class="uk-margin-remove">Quick Enquiry</h6></label>
+
+                       <h6 class="uk-margin-remove">Quick Enquiry</h6>
                     </div>
                 </div>
 
                 <div class="row uk-margin-left uk-margin-right uk-padding-small uk-padding-remove-vertical">
                     <div class="input-field col s12 uk-margin-remove-top uk-padding-remove-vertical">
                         <i class="material-icons prefix">account_circle</i>
+                        <input type="hidden"name="tourName" value="{{$tour->name}}">
                         <input id="name" type="text" class="validate" name="fullName">
                         <label for="name">Name</label>
                     </div>
