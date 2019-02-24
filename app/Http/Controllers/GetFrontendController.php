@@ -142,8 +142,7 @@ class GetFrontendController extends Controller
     {
         Insta::firstOrCreate([
             'thumb' => $post->images->thumbnail->url  ,
-            'link' => $post->link  ,
-            'caption' => $post->caption->text
+            'link' => $post->link
         ]);
 
     }
