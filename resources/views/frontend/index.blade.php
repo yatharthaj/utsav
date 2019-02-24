@@ -177,7 +177,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="center-align heading-button uk-padding-large uk-margin-medium-bottom">
+                        <div class="center-align heading-button uk-padding-large">
                             <a class="waves-effect waves-light btn btn-large tofm-meta-wrapper-buttom"
                             href="{{ route('frontend-tourDetail',[$month->tour->slug]) }}">Discover</a>
                         </div>
