@@ -17,7 +17,6 @@ class CreateInstasTable extends Migration
             $table->increments('id');
             $table->text('thumb');
             $table->text('link');
-            $table->text('caption')->nullable();
             $table->timestamps();
         });
     }

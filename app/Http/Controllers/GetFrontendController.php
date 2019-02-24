@@ -142,7 +142,7 @@ class GetFrontendController extends Controller
     {
         // dd($post->images->low_resolution->url);
         Insta::firstOrCreate([
-            'thumb' => $post->link ,
+            'thumb' => $post->images->low_resolution->url,
             'link' => $post->link
         ]);
 
