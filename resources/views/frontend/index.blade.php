@@ -200,7 +200,9 @@
             <div class="row insta-row">
                 @foreach($row as $feed)
                 <div class="col s4 m4 l4">
-                    <img class="responsive-img" src="{{$feed->link}}" alt="{{$feed->caption}}">
+                <a href="{{$feed->link}}" target="_blank">
+                            <img class="responsive-img" src="{{$feed->thumb}}" alt="{{$feed->caption}}">
+                    </a>
                 </div>
                 @endforeach
             </div>
