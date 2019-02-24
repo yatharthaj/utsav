@@ -15,7 +15,7 @@
                 <div class="row uk-margin-left uk-margin-right uk-padding-small uk-padding-remove-vertical">
                     <div class="input-field col s12 uk-margin-remove-top uk-padding-remove-vertical">
                         <i class="material-icons prefix">account_circle</i>
-                        <input type="hidden"name="tourName" value="{{$tour->name}}">
+                        <input type="hidden"name="tourName" value="{{$tour->title.''.$tour->days.' Days'}}">
                         <input id="name" type="text" class="validate" name="fullName">
                         <label for="name">Name</label>
                     </div>
