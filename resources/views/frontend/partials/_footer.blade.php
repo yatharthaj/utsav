@@ -26,10 +26,10 @@
                 <div class="row">
                     <h6>We are affliated to:</h6>
                     <div class="col s6 m6 l3">
-                        <img  width="62" src="{{ asset('img/govski.png') }}">
+                        <img  width="62" src="{{ asset('img/nsff.jpg') }}">
                     </div>
                     <div class="col s6 m6 l3">
-                        <img  width="62" src="{{ asset('img/ctaan.png') }}">
+                        <img  width="62" src="{{ asset('img/taan.jpg') }}">
                     </div>
                     <div class="col s6 m6 l3">
                         <img  width="62" src="{{ asset('img/nmaski.png') }}">
