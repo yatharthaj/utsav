@@ -110,6 +110,17 @@
                                 <label for="text">Passport no.</label>
                             </div>
                         </div>
+                        @if ($request->pax > 1)
+                        @for ($i = 1; $i <= $request->pax; $i++)
+                    <h5>Additional Traveller {{$i}}</h5>
+                        <div class="row uk-margin-remove-bottom">
+                            <div class="input-field col s12">
+                                <input id="traveller" type="text" class="validate" name="traveller[]" required>
+                            <label for="traveller">Traveller {{$i}}</label>
+                            </div>
+                        </div>
+                        @endfor
+                        @endif
                         <div class="row uk-margin-medium-bottom">
                             <div class="input-field col s12 ">
                                 <label>
@@ -118,6 +129,7 @@
                                 </label>
                             </div>
                         </div>
+
                         <div class="row center-align">
                             <div class="input-field col s12 ">
                                 <button class="btn waves-effect waves-light" type="submit" name="action">Proceed

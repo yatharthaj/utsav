@@ -86,6 +86,11 @@ class PostFrontendController extends Controller
             'pNo.*' => 'required',
             'expiry.*' => 'required'
         ]);
+        if ($request->travellers > 1) {
+			$this->validate($request, [
+				'traveller.*' => 'required'
+			]);
+		}
         $userIP = $request->ip();
         $IPdata = file_get_contents("http://api.ipstack.com/{$userIP}?access_key=dbdffe40fc5408f1272a7a972a312548");
         $IPdata = json_decode($IPdata);
@@ -108,6 +113,11 @@ class PostFrontendController extends Controller
         $data["DOB"] = $request->dob;
         $data["passport"] = $request->pNo;
         $data["expiry"] = $request->expiry;
+        if ($request->pax > 1) {
+            for ($i=1; $i <=$request->pax ; $i++) {
+                $data["traveller" . $i] = $request->traveller[$i];
+            }
+        }
         Mail::send(new Booking($data));
         return view('frontend.book.book-step3')->withTour($tour);
 
