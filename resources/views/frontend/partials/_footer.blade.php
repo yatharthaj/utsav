@@ -29,7 +29,7 @@
                         <img  width="62" src="{{ asset('img/govski.png') }}">
                     </div>
                     <div class="col s6 m6 l3">
-                        <img  width="62" src="{{ asset('img/ctaan.jpg') }}">
+                        <img  width="62" src="{{ asset('img/ctaan.png') }}">
                     </div>
                     <div class="col s6 m6 l3">
                         <img  width="62" src="{{ asset('img/nmaski.png') }}">
