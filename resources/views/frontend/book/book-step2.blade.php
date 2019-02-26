@@ -115,8 +115,8 @@
                     <h5>Additional Traveller {{$i}}</h5>
                         <div class="row uk-margin-remove-bottom">
                             <div class="input-field col s12">
-                                <input id="traveller" type="text" class="validate" name="traveller[]" required>
-                            <label for="traveller">Traveller {{$i}}</label>
+                                <input id="traveller{{$i}}" type="text" class="validate" name="traveller[]" required>
+                            <label for="traveller{{$i}}">Traveller {{$i}}</label>
                             </div>
                         </div>
                         @endfor

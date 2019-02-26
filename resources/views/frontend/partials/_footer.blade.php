@@ -5,13 +5,13 @@
             <div class="col s12 m4 l4">
                 <h6 class="white-text">Contact Ski Guides Nepal</h6>
                 <ul class="footer-contact">
-                    <li><i class="fas fa-phone"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->phone }}</a></li>
-                    <li><i class="fas fa-mobile-alt"></i><a class="grey-text text-lighten-3 " href="#!"> {{ $fcontact->mobile }}</a></li>
-                    <li><i class="fas fa-envelope-open"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->email }}</a></li>
-                    <li><i class="fas fa-home"></i><a class="grey-text text-lighten-3 " href="#!">{{ $fcontact->address .','. $fcontact->city }}</a></li>
+                    <li><i class="fas fa-phone"></i>{{ $fcontact->phone }}</li>
+                    <li><i class="fas fa-mobile-alt"></i> {{ $fcontact->mobile }}</li>
+                    <li><i class="fas fa-envelope-open"></i>{{ $fcontact->email }}</li>
+                    <li><i class="fas fa-home"></i>{{ $fcontact->address .','. $fcontact->city }}</li>
                 </ul>
             </div>
-      
+
             <div class="col s12 m4 l4">
                 <h6 class="white-text">About</h6>
                 <ul class="footer-links">
@@ -29,7 +29,7 @@
                         <img  width="62" src="{{ asset('img/govski.png') }}">
                     </div>
                     <div class="col s6 m6 l3">
-                        <img  width="62" src="{{ asset('img/keep.jpg') }}">
+                        <img  width="62" src="{{ asset('img/ctaan.jpg') }}">
                     </div>
                     <div class="col s6 m6 l3">
                         <img  width="62" src="{{ asset('img/nmaski.png') }}">
