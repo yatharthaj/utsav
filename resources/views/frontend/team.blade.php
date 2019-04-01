@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
     <!--image start  -->
-    <div class="team-parallax" style="background-image: url('https://source.unsplash.com/1200x640/?mail');">
+<div class="team-parallax" style="background-image: url('{{asset('img/team.jpg')}}');">
     </div>
     <!-- image end -->
     <!-- content start -->
