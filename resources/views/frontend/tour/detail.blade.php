@@ -67,14 +67,14 @@
                    href="{{ route('frontend-bookStep1',$tour->slug) }}">Book Now</a>
             </div>
             <div class="row uk-margin-remove-bottom" id="social-wrapper">
-                <div class="col s3 m3 l3 center ">
+                <div class="col s4 m4 l4 center ">
                     <a href="http://www.facebook.com/sharer.php?u={{url()->current()}}"
                        onclick="window.open(this.href, 'facebookwindow','left=20,top=20,width=600,height=700,toolbar=0,resizable=1'); return false;" title="Facebook">
                         <i class="fab fa-facebook"></i>
                         <span>Share</span>
                     </a>
                 </div>
-                <div class="col s3 m3 l3 center ">
+                <div class="col s4 m4 l4 center ">
                     <a href="#"
                        onclick="window.open('http://twitter.com/intent/tweet?url={{ url()->current()}};text=&amp;via=skiguidesnepal', '', 'width=626,height=436');
                                return false;" target="_blank" title="Twitter">
@@ -82,15 +82,7 @@
                         <span>Tweet</span>
                     </a>
                 </div>
-                <div class="col s3 m3 l3 center ">
-                    <a href="#" target="_blank"
-                       onclick="window.open('https://plus.google.com/share?url={{url()->current()}}', '', 'width=626,height=436');
-                               return false;" title="Google">
-                        <i class="fab fa-google-plus-g"></i>
-                      
-                    </a>
-                </div>
-                <div class="col s3 m3 l3 center ">
+                <div class="col s4 m4 l4 center ">
                     <a href="https://www.instagram.com/skiguidesnepal/" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
                     <span>Insta</span>
