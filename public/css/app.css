@@ -10072,8 +10072,10 @@ a.middle-indicator-text {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  -webkit-transition: background-color .3s, opacity .5s, visibility .5s;
-  transition: background-color .3s, opacity .5s, visibility .5s;
+  -webkit-transition: background-color .3s,
+ opacity .5s, visibility .5s;
+  transition: background-color .3s,
+ opacity .5s, visibility .5s;
   opacity: 0;
   visibility: hidden;
   z-index: 1000;
@@ -10127,7 +10129,7 @@ a.middle-indicator-text {
 }
 
 .team-parallax {
-  height: 450px;
+  height: 550px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
