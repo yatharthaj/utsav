@@ -84,7 +84,7 @@
 <!-- Special block start -->
 <div class="container-fluid  heading-wrapper">
     <h3 class="center-align heading-title">TOP ADVENTURES</h3>
-    <p class="center-align heading-para">Our collection of the most popular adventures in 2018</p>
+    <p class="center-align heading-para">Our collection of the most popular adventures in 2019</p>
     <hr>
 </div>
 <!-- package start -->
